@@ -1,21 +1,21 @@
-const target = new Date("2025-12-27T00:00:00");
+const targetDate = new Date("2025-12-27T00:00:00").getTime();
 
-function countdown() {
-  const now = new Date();
-  const diff = target - now;
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
 
-  if (diff <= 0) {
-    document.getElementById("countdown").innerText = "Hôm nay là ngày cưới 💍";
-    return;
-  }
+  if (distance <= 0) return;
 
-  const d = Math.floor(diff / 86400000);
-  const h = Math.floor(diff / 3600000) % 24;
-  const m = Math.floor(diff / 60000) % 60;
-  const s = Math.floor(diff / 1000) % 60;
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((distance / (1000 * 60)) % 60);
+  const seconds = Math.floor((distance / 1000) % 60);
 
-  document.getElementById("countdown").innerText =
-    `${d} ngày ${h} giờ ${m} phút ${s} giây`;
+  document.getElementById("cd-days").innerText = days;
+  document.getElementById("cd-hours").innerText = hours;
+  document.getElementById("cd-minutes").innerText = minutes;
+  document.getElementById("cd-seconds").innerText = seconds;
 }
 
-setInterval(countdown, 1000);
+setInterval(updateCountdown, 1000);
+updateCountdown();

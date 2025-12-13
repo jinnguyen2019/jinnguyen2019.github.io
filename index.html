@@ -75,9 +75,29 @@
     <!-- COUNTDOWN -->
     <section class="section fade-in">
         <h3>Đếm Ngược</h3>
-        <div id="countdown" class="countdown"></div>
+<!--        <div id="countdown" class="countdown"></div>-->
+        <div id="countdown" class="countdown-wrapper">
+            <div class="time-box">
+                <span id="cd-days">0</span>
+                <small>Ngày</small>
+            </div>
+            <div class="time-box">
+                <span id="cd-hours">0</span>
+                <small>Giờ</small>
+            </div>
+            <div class="time-box">
+                <span id="cd-minutes">0</span>
+                <small>Phút</small>
+            </div>
+            <div class="time-box">
+                <span id="cd-seconds">0</span>
+                <small>Giây</small>
+            </div>
+        </div>
+
     </section>
 
+    <!-- ALBUM -->
     <section class="section fade-in">
         <h3>Album Ảnh Cưới</h3>
 
@@ -112,11 +132,10 @@
 
 </div>
 
-<div id="lightbox" class="lightbox hidden">
-    <span class="lightbox-close">&times;</span>
-    <img id="lightbox-img" src="">
-</div>
-
+<!--<div id="lightbox" class="lightbox hidden">-->
+<!--    <span class="lightbox-close">&times;</span>-->
+<!--    <img id="lightbox-img" src="">-->
+<!--</div>-->
 
 <script src="js/countdown.js"></script>
 <script src="js/main.js"></script>

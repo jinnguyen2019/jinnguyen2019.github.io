@@ -438,6 +438,11 @@ body {
   opacity: 0.9;
 }
 
+.time-box:nth-child(2),
+.time-box:nth-child(4) {
+  background: #8b5a68; /* hồng trầm rất nhẹ */
+}
+
 .time-number {
   font-size: 34px;
   font-weight: 600;

@@ -5,9 +5,9 @@
 }
 
 body {
-  font-family: 'Playfair Display', serif;
-  background: #fff;
-  color: #333;
+  font-family: 'Cormorant Garamond', serif;
+  color: #3a3a3a;
+  background: #faf9f7;
 }
 
 .hidden {
@@ -23,101 +23,105 @@ body {
   align-items: center;
 }
 
-.intro-content {
-  text-align: center;
+.intro-box {
   background: rgba(255,255,255,0.85);
-  padding: 40px;
-  animation: fadeIn 2s ease;
+  padding: 50px;
+  text-align: center;
 }
 
-.intro-content h1 {
+.intro-box h1 {
   font-family: 'Great Vibes', cursive;
   font-size: 48px;
   margin: 20px 0;
-}
-
-.intro-content span {
-  font-size: 14px;
-  letter-spacing: 2px;
 }
 
 /* COVER */
 .cover {
   height: 100vh;
   background: url('../assets/images/cover.jpg') center/cover no-repeat;
-  position: relative;
 }
 
-.cover .overlay {
-  background: rgba(0,0,0,0.4);
-  color: #fff;
+.cover-overlay {
   height: 100%;
+  background: rgba(0,0,0,0.35);
+  color: #fff;
   text-align: center;
-  padding-top: 25vh;
+  padding-top: 30vh;
 }
 
 .cover h1 {
   font-family: 'Great Vibes', cursive;
-  font-size: 52px;
-  margin: 20px 0;
+  font-size: 56px;
 }
 
 /* SECTION */
 .section {
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
 }
 
 .section h3 {
-  font-size: 26px;
+  font-size: 28px;
   margin-bottom: 20px;
 }
 
-.info-box {
-  margin-top: 20px;
+.desc {
+  max-width: 600px;
+  margin: auto;
   line-height: 1.8;
+}
+
+.info {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
 }
 
 /* COUPLE */
 .couple {
   display: flex;
   justify-content: center;
-  gap: 80px;
+  gap: 120px;
 }
 
-.couple h4 {
-  font-size: 20px;
+.couple span {
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+/* COUNTDOWN */
+.countdown {
+  font-size: 22px;
+  margin-top: 20px;
 }
 
 /* RSVP */
 .rsvp {
-  max-width: 400px;
+  max-width: 360px;
   margin: auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.rsvp input, .rsvp select, .rsvp button {
+.rsvp input,
+.rsvp select,
+.rsvp button {
   padding: 12px;
-  font-size: 14px;
+  border: 1px solid #ccc;
+  background: #fff;
 }
 
 .rsvp button {
-  background: #000;
+  background: #3a3a3a;
   color: #fff;
-  border: none;
   cursor: pointer;
 }
 
 /* FOOTER */
 footer {
-  padding: 40px;
+  padding: 50px;
   text-align: center;
-  background: #f7f7f7;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
+  background: #eee;
 }

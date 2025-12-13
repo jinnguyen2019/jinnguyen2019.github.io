@@ -1,65 +1,71 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Thiệp Cưới | Trần Nhân Ái & Nguyễn Minh Anh</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <title>Wedding Invitation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Font giống CineLove -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Font giống phong cách mẫu 47 -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<!-- Nhạc nền -->
-<audio id="bgMusic" loop>
-    <source src="music/i-do.mp3" type="audio/mpeg">
+<audio id="music" loop>
+    <source src="music/bgm.mp3" type="audio/mpeg">
 </audio>
 
-<!-- MÀN MỞ THIỆP -->
-<div id="intro" class="intro">
-    <div class="intro-content">
+<!-- INTRO -->
+<div class="intro" id="intro">
+    <div class="intro-box">
         <p>Wedding Invitation</p>
-        <h1>Trần Nhân Ái &<br>Nguyễn Minh Anh</h1>
+        <h1>Trần Nhân Ái<br>&<br>Nguyễn Minh Anh</h1>
         <span>Chạm để mở thiệp</span>
     </div>
 </div>
 
-<!-- NỘI DUNG CHÍNH -->
-<div id="content" class="hidden">
+<!-- MAIN -->
+<div id="main" class="hidden">
 
     <!-- COVER -->
     <section class="cover">
-        <div class="overlay">
+        <div class="cover-overlay">
             <h2>Save The Date</h2>
             <h1>Trần Nhân Ái & Nguyễn Minh Anh</h1>
-            <p>27 . 12 . 2025</p>
-            <div id="countdown"></div>
+            <p>27 · 12 · 2025</p>
         </div>
     </section>
 
-    <!-- THÔNG TIN TIỆC -->
+    <!-- INFO -->
     <section class="section">
         <h3>Trân Trọng Kính Mời</h3>
-        <p>
+        <p class="desc">
             Đến dự buổi tiệc chung mừng lễ thành hôn của chúng tôi
         </p>
-        <div class="info-box">
-            <p><strong>Thời gian:</strong> Thứ Bảy, 27/12/2025</p>
-            <p><strong>Địa điểm:</strong> (Bạn điền sau)</p>
+
+        <div class="info">
+            <p><strong>Thời gian</strong><br>Thứ Bảy · 27/12/2025</p>
+            <p><strong>Địa điểm</strong><br>(Bạn điền sau)</p>
         </div>
     </section>
 
-    <!-- CÔ DÂU & CHÚ RỂ -->
+    <!-- COUPLE -->
     <section class="section couple">
         <div>
-            <h4>Cô Dâu</h4>
-            <p>Trần Nhân Ái</p>
+            <span>Cô Dâu</span>
+            <h4>Trần Nhân Ái</h4>
         </div>
         <div>
-            <h4>Chú Rể</h4>
-            <p>Nguyễn Minh Anh</p>
+            <span>Chú Rể</span>
+            <h4>Nguyễn Minh Anh</h4>
         </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="section">
+        <h3>Đếm Ngược</h3>
+        <div id="countdown" class="countdown"></div>
     </section>
 
     <!-- RSVP -->
@@ -71,12 +77,10 @@
                 <option>Xin xác nhận tham dự</option>
                 <option>Rất tiếc không tham dự</option>
             </select>
-            <input type="number" placeholder="Số người tham dự" min="1">
             <button type="submit">Gửi lời chúc</button>
         </form>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <p>Trần Nhân Ái & Nguyễn Minh Anh</p>
         <span>27.12.2025</span>

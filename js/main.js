@@ -1,12 +1,23 @@
-const intro = document.getElementById("intro");
-const main = document.getElementById("main");
-const music = document.getElementById("music");
+//Click Intro open Card
+const envelope = document.getElementById("openEnvelope");
+const introEl = document.getElementById("intro");
+const mainEl = document.getElementById("main");
+const musicEl = document.getElementById("music");
 
-intro.addEventListener("click", () => {
-  intro.style.display = "none";
-  main.classList.remove("hidden");
-  music.play();
-});
+if (envelope) {
+  envelope.addEventListener("click", () => {
+    envelope.classList.add("open");
+
+    setTimeout(() => {
+      introEl.style.display = "none";
+      mainEl.classList.remove("hidden");
+
+      musicEl.play().catch(() => {
+        // iOS cần user interaction, ignore lỗi
+      });
+    }, 1200);
+  });
+}
 
 //Fade-in
 const faders = document.querySelectorAll(".fade-in");
@@ -123,20 +134,3 @@ if (mapBtn) {
     }
   });
 }
-
-//Click Intro open Card
-const envelope = document.getElementById("openEnvelope");
-const intro = document.getElementById("intro");
-const main = document.getElementById("main");
-const music = document.getElementById("music");
-
-envelope.addEventListener("click", () => {
-  envelope.classList.add("open");
-
-  setTimeout(() => {
-    intro.style.display = "none";
-    main.classList.remove("hidden");
-    music.play();
-  }, 1200);
-});
-

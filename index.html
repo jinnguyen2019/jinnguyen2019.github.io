@@ -12,6 +12,20 @@
 </head>
 <body>
 
+<div class="floating-leaves">
+    <svg class="leaf leaf-1" viewBox="0 0 64 64">
+        <path d="M32 2C18 18 10 30 10 42c0 12 10 20 22 20s22-8 22-20C54 30 46 18 32 2z"/>
+    </svg>
+
+    <svg class="leaf leaf-2" viewBox="0 0 64 64">
+        <path d="M32 4C20 18 12 28 12 40c0 10 8 18 20 18s20-8 20-18C52 28 44 18 32 4z"/>
+    </svg>
+
+    <svg class="leaf leaf-3" viewBox="0 0 64 64">
+        <path d="M32 6C22 20 16 28 16 38c0 8 6 14 16 14s16-6 16-14C48 28 42 20 32 6z"/>
+    </svg>
+</div>
+
 <audio id="music" loop>
     <source src="music/wedding_music.mp3" type="audio/mpeg">
 </audio>
@@ -21,8 +35,8 @@
 <!-- INTRO -->
 <div class="intro" id="intro">
     <div class="intro-box">
-        <p>Wedding Invitation</p>
         <h1>Trần Nhân Ái<br>&<br>Nguyễn Minh Anh</h1>
+        <p>Trân Trọng Kính Mời</p>
         <span>Chạm để mở thiệp</span>
     </div>
 </div>
@@ -41,13 +55,21 @@
 
     <!-- INFO -->
     <section class="section fade-in">
-        <h3>Trân Trọng Kính Mời</h3>
+        <h3>Thư Mời</h3>
         <p class="desc">
-            Đến dự buổi tiệc chung mừng lễ thành hôn của chúng tôi
+            Chúng tôi trân trọng kính mời Quý Khách
+            <br>
+            Đến tham dự buổi tiệc thân mật chung vui
+            <br>
+            Nhân ngày lễ thành hôn của chúng tôi
         </p>
 
         <div class="info">
-            <p><strong>Thời gian</strong><br>Thứ Bảy · 27/12/2025</p>
+            <p>
+                <strong>Thời Gian</strong><br>
+                Thứ Bảy, ngày 27 tháng 12 năm 2025
+            </p>
+
             <p><strong>Địa điểm</strong><br>(Bạn điền sau)</p>
         </div>
     </section>
@@ -92,16 +114,23 @@
                 <option value="Tham dự">Tham dự</option>
                 <option value="Không tham dự">Không tham dự</option>
             </select>
-            <button type="submit">Gửi xác nhận</button>
+            <button type="submit">Phản Hồi Tham Dự</button>
         </form>
     </section>
 
     <footer>
-        <p>Nguyễn Minh Anh & Trần Nhân Ái</p>
+        <p>Trân trọng cảm ơn sự hiện diện của Quý Khách</p>
+        <span>Trần Nhân Ái & Nguyễn Minh Anh</span>
         <span>27.12.2025</span>
     </footer>
 
 </div>
+
+<div id="lightbox" class="lightbox hidden">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="">
+</div>
+
 
 <script src="js/countdown.js"></script>
 <script src="js/main.js"></script>

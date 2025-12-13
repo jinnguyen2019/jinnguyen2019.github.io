@@ -8,6 +8,7 @@ intro.addEventListener("click", () => {
   music.play();
 });
 
+//Fade-in
 const faders = document.querySelectorAll(".fade-in");
 
 const appearOnScroll = new IntersectionObserver(
@@ -23,6 +24,7 @@ const appearOnScroll = new IntersectionObserver(
 
 faders.forEach(el => appearOnScroll.observe(el));
 
+//Music on/off
 const toggleBtn = document.getElementById("musicToggle");
 
 toggleBtn.addEventListener("click", () => {
@@ -35,6 +37,7 @@ toggleBtn.addEventListener("click", () => {
   }
 });
 
+//rsvp
 document.getElementById("rsvpForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
@@ -50,3 +53,40 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
     this.reset();
   });
 });
+
+//light box when click album
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".lightbox-close");
+
+document.querySelectorAll(".gallery img").forEach(img => {
+  img.addEventListener("click", () => {
+    lightboxImg.src = img.src;
+    lightbox.classList.remove("hidden");
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  lightbox.classList.add("hidden");
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.add("hidden");
+  }
+});
+
+// floating-leaves
+let lastScroll = 0;
+const leaves = document.querySelector(".floating-leaves");
+
+window.addEventListener("scroll", () => {
+  const current = window.scrollY;
+
+  if (Math.abs(current - lastScroll) > 20) {
+    leaves.style.opacity = 1;
+  }
+
+  lastScroll = current;
+});
+

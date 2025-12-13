@@ -19,27 +19,6 @@ body {
 }
 
 /* INTRO */
-
-/*
-.intro {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  background: url('../assets/images/cover.jpg') center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100svh;
-  min-height: 100vh;
-}
-.intro-box {
-  padding: 50px;
-  text-align: center;
-  background: rgba(255,255,255,0.9);
-  border: 1px solid var(--pink-soft);
-}
-*/
-
 .intro-names {
   font-family: 'Great Vibes', cursive;
   font-size: 42px;
@@ -63,6 +42,27 @@ body {
   align-items: center;
   background: #fbf3ee;
   text-align: center;
+}
+
+.stacked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.15; /* khóa line-height để không nhảy */
+}
+
+/* Font cho tên */
+.stacked .groom,
+.stacked .bride {
+  font-family: 'Great Vibes', cursive;
+  font-size: 38px;
+  white-space: nowrap;   /* ⭐ KHÔNG CHO RỚT CHỮ */
+}
+
+/* Icon tim ở giữa */
+.stacked .heart-icon {
+  margin: 6px 0;
 }
 
 .names-top {
@@ -682,31 +682,31 @@ footer {
   }
 
   .cover-text {
-      right: 50%;
-      transform: translateX(50%);
-      bottom: 8%;
-      text-align: center;
-    }
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 8%;
+    text-align: center;
+  }
 
-    .cover-text h1 {
-      font-size: 32px;
-    }
+  .cover-text h1 {
+    font-size: 32px;
+  }
 
-    .cover-card {
-        right: 50%;
-        transform: translateX(50%);
-        bottom: 6%;
-        width: 90%;
-        text-align: center;
-      }
+  .cover-card {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 6%;
+    width: 90%;
+    text-align: center;
+  }
 
-      .cover-names {
-        font-size: 30px;
-      }
+  .cover-names {
+    font-size: 30px;
+  }
 
-      .cover-divider {
-        margin: 14px auto;
-      }
+  .cover-divider {
+    margin: 14px auto;
+  }
 
   .section {
     padding: 60px 16px;
@@ -717,17 +717,17 @@ footer {
   }
 
   .time-box {
-      width: 62px;
-      height: 80px;
-    }
+    width: 62px;
+    height: 80px;
+  }
 
   .time-box span {
-      font-size: 28px;
-    }
+    font-size: 28px;
+  }
 
-    .countdown-glass {
-      padding: 16px 12px;
-    }
+  .countdown-glass {
+    padding: 16px 12px;
+  }
 
   .time-box small {
     font-size: 11px;
@@ -738,19 +738,19 @@ footer {
   }
 
   .map-wrapper iframe {
-      height: 260px;
-    }
+    height: 260px;
+  }
 
   .map-wrapper {
-      aspect-ratio: 3 / 4;
-    }
+    aspect-ratio: 3 / 4;
+  }
 
-    .direction-btn {
-      font-size: 13px;
-      padding: 9px 12px;
-    }
+  .direction-btn {
+    font-size: 13px;
+    padding: 9px 12px;
+  }
 
-.invite-info {
+  .invite-info {
     flex-direction: column;
     gap: 26px;
   }
@@ -764,21 +764,30 @@ footer {
   }
 
   .map-desktop {
-      display: none;        /* ❌ ẩn iframe */
-    }
+    display: none;        /* ❌ ẩn iframe */
+  }
 
-    .map-mobile-btn {
-      display: inline-block; /* ✅ hiện nút */
-    }
+  .map-mobile-btn {
+    display: inline-block; /* ✅ hiện nút */
+  }
 
-    .envelope {
-        width: 240px;
-        height: 160px;
-      }
+  .envelope {
+    width: 240px;
+    height: 160px;
+  }
 
-      .intro-names {
-        font-size: 36px;
-      }
+  .intro-names {
+    font-size: 36px;
+  }
+
+  .stacked .groom,
+  .stacked .bride {
+    font-size: 32px; /* giảm vừa đủ để luôn 1 dòng */
+  }
+
+  .stacked .heart-icon {
+    margin: 4px 0;
+  }
 }
 
 .hidden {

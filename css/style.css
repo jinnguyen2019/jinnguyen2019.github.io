@@ -742,6 +742,16 @@ footer {
   animation-delay: 12s;
 }
 
+.lazy-img {
+  filter: blur(6px);
+  transition: filter 0.6s ease, opacity 0.6s ease;
+}
+
+.lazy-img.loaded {
+  filter: blur(0);
+  opacity: 1;
+}
+
 @keyframes float {
   0% {
     transform: translateY(0) rotate(0deg);

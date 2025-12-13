@@ -9,30 +9,23 @@ if (envelope) {
   envelope.addEventListener("click", () => {
     envelope.classList.add("open");
 
-    // Fade nền trắng
+    // Sau khi thư mở gần xong
     setTimeout(() => {
       introFade.style.opacity = 1;
     }, 900);
+
+    setTimeout(() => {
+      mainEl.classList.add("show");
+    }, 50);
 
     // Hiện website
     setTimeout(() => {
       introEl.style.display = "none";
       mainEl.classList.remove("hidden");
-
-      // bật zoom
-      requestAnimationFrame(() => {
-        mainEl.classList.add("show");
-      });
-
-      // cho phép scroll lại
-      document.body.classList.add("loaded");
-
-      // nhạc (iOS safe)
       musicEl.play().catch(() => {});
     }, 1600);
   });
 }
-
 
 //Fade-in
 const faders = document.querySelectorAll(".fade-in");

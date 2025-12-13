@@ -1,6 +1,7 @@
 //Click Intro open Card
 const envelope = document.getElementById("openEnvelope");
 const introEl = document.getElementById("intro");
+const introFade = document.getElementById("introFade");
 const mainEl = document.getElementById("main");
 const musicEl = document.getElementById("music");
 
@@ -8,14 +9,21 @@ if (envelope) {
   envelope.addEventListener("click", () => {
     envelope.classList.add("open");
 
+    // Sau khi thư mở gần xong
+    setTimeout(() => {
+      introFade.style.opacity = 1;
+    }, 900);
+
+    setTimeout(() => {
+      mainEl.classList.add("show");
+    }, 50);
+
+    // Hiện website
     setTimeout(() => {
       introEl.style.display = "none";
       mainEl.classList.remove("hidden");
-
-      musicEl.play().catch(() => {
-        // iOS cần user interaction, ignore lỗi
-      });
-    }, 1200);
+      musicEl.play().catch(() => {});
+    }, 1600);
   });
 }
 

@@ -5,6 +5,19 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+#main {
+  transform: scale(0.96);
+  opacity: 0;
+  transition:
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 1s ease;
+}
+
+#main.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
 body {
   font-family: 'Cormorant Garamond', serif;
   background: var(--cream);
@@ -63,6 +76,16 @@ body {
   align-items: center;
   background: #fbf3ee;
   text-align: center;
+}
+
+.intro-fade {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1500;
+  transition: opacity 1.2s ease;
 }
 
 .names-top {
@@ -172,6 +195,14 @@ body {
     inset 0 1px 2px rgba(255,255,255,0.4);
 
   z-index: 6;
+  transition:
+      transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.6s ease;
+}
+
+.envelope.open .envelope-seal {
+  transform: translate(-50%, -50%) rotate(25deg) scale(0.9);
+  opacity: 0.85;
 }
 
 .envelope {
@@ -192,6 +223,15 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+.intro-envelope,
+#main,
+.envelope,
+.envelope-seal,
+.envelope-letter {
+  will-change: transform, opacity;
+}
+
 
 /* COVER */
 .cover {

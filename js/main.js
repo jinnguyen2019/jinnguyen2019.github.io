@@ -78,3 +78,18 @@ lightbox.addEventListener("click", (e) => {
     lightbox.style.pointerEvents = "none";
   }
 });
+
+//floating-leaf
+let lastScroll = 0;
+const leaves = document.querySelector(".floating-leaves");
+
+window.addEventListener("scroll", () => {
+  const current = window.scrollY;
+
+  if (Math.abs(current - lastScroll) > 20) {
+    leaves.style.opacity = 1;
+  }
+
+  lastScroll = current;
+});
+

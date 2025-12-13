@@ -14,12 +14,6 @@ body {
   letter-spacing: 0.02em;    /* giúp chữ thoáng hơn trên mobile */
 }
 
-body:not(.loaded) #main,
-body:not(.loaded) .album-section,
-body:not(.loaded) footer {
-  pointer-events: none;
-}
-
 .hidden {
   display: none;
 }
@@ -40,7 +34,7 @@ body:not(.loaded) footer {
 .intro-envelope {
   position: fixed;          /* ⭐ BẮT BUỘC */
   inset: 0;
-  z-index: 9999;
+  z-index: 2000;
   height: 100svh;
   display: flex;
   flex-direction: column;
@@ -48,7 +42,6 @@ body:not(.loaded) footer {
   align-items: center;
   background: #fbf3ee;
   text-align: center;
-  pointer-events: auto;
 }
 
 .stacked {
@@ -443,6 +436,11 @@ body:not(.loaded) footer {
   letter-spacing: 1px;
   text-transform: lowercase;
   opacity: 0.9;
+}
+
+.time-box:nth-child(2),
+.time-box:nth-child(4) {
+  background: #8b5a68; /* hồng trầm rất nhẹ */
 }
 
 .time-number {
@@ -1030,7 +1028,6 @@ footer {
 /* ALBUM */
 .album-section {
   padding: 80px 20px;
-  position: relative;
 }
 
 .album-slider {
@@ -1054,6 +1051,8 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  position: absolute;
   inset: 0;
 
   opacity: 1;
@@ -1061,7 +1060,6 @@ footer {
   transition:
     opacity 0.4s ease,
     transform 0.4s ease;
-  pointer-events: auto;
 }
 
 /* trạng thái chuyển */

@@ -403,7 +403,11 @@ body {
   min-width: 140px;         /* ⭐ không bị gầy */
   padding: 22px 12px;
 
-  background: rgba(255, 255, 255, 0.92);
+  background: linear-gradient(
+    45deg,
+    var(--green-main),
+    var(--pink-main)
+  );
   border-radius: 10px;
 
   display: flex;
@@ -434,22 +438,18 @@ body {
   opacity: 0.9;
 }
 
-.time-box:nth-child(2),
-.time-box:nth-child(4) {
-  background: #8b5a68; /* hồng trầm rất nhẹ */
-}
-
 .time-number {
   font-size: 34px;
   font-weight: 600;
   line-height: 1;
+  letter-spacing: 1px;
   white-space: nowrap; /* không cho gãy số */
 }
 
 .time-label {
   margin-top: 6px;
   font-size: 13px;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 /* RSVP */
@@ -547,7 +547,7 @@ body {
 }
 
 .highlight {
-  color: var(--pink);
+  color: var(--pink-main);
 }
 
 /* FOOTER */

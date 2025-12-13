@@ -13,8 +13,10 @@
 <body>
 
 <audio id="music" loop>
-    <source src="music/bgm.mp3" type="audio/mpeg">
+    <source src="music/wedding_music.mp3" type="audio/mpeg">
 </audio>
+<button id="musicToggle" class="music-btn">🎵</button>
+
 
 <!-- INTRO -->
 <div class="intro" id="intro">
@@ -72,30 +74,30 @@
         <h3>Album Ảnh Cưới</h3>
 
         <div class="gallery">
-            <img src="assets/images/album1.jpg">
-            <img src="assets/images/album2.jpg">
-            <img src="assets/images/album3.jpg">
-            <img src="assets/images/album4.jpg">
-            <img src="assets/images/album5.jpg">
-            <img src="assets/images/album6.jpg">
+            <img src="assets/images/1.jpg">
+            <img src="assets/images/2.jpg">
+            <img src="assets/images/3.jpg">
+            <img src="assets/images/4.jpg">
+            <img src="assets/images/5.jpg">
+            <img src="assets/images/6.jpg">
         </div>
     </section>
 
     <!-- RSVP -->
     <section class="section fade-in">
         <h3>Xác Nhận Tham Dự</h3>
-        <form class="rsvp">
-            <input type="text" placeholder="Họ và tên" required>
-            <select>
-                <option>Xin xác nhận tham dự</option>
-                <option>Rất tiếc không tham dự</option>
+        <form class="rsvp" id="rsvpForm">
+            <input type="text" id="name" placeholder="Họ và tên" required>
+            <select id="status">
+                <option value="Tham dự">Tham dự</option>
+                <option value="Không tham dự">Không tham dự</option>
             </select>
-            <button type="submit">Gửi lời chúc</button>
+            <button type="submit">Gửi xác nhận</button>
         </form>
     </section>
 
     <footer>
-        <p>Trần Nhân Ái & Nguyễn Minh Anh</p>
+        <p>Nguyễn Minh Anh & Trần Nhân Ái</p>
         <span>27.12.2025</span>
     </footer>
 

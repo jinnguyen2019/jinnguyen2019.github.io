@@ -119,6 +119,18 @@ body {
   cursor: pointer;
 }
 
+/* Fade when scroll */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* FOOTER */
 footer {
   padding: 50px;

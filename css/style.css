@@ -48,14 +48,18 @@ body {
 
 .cover-overlay {
   height: 100%;
+  background: rgba(0,0,0,0.35);
   color: #fff;
   text-align: center;
   padding-top: 30vh;
-  background: linear-gradient(
-      rgba(95, 127, 106, 0.55),
-      rgba(95, 127, 106, 0.35)
-    );
 }
+/*
+.cover-overlay {
+  background: linear-gradient(
+    rgba(95, 127, 106, 0.55),
+    rgba(95, 127, 106, 0.35)
+  );
+}*/
 
 .cover h1 {
   font-family: 'Great Vibes', cursive;
@@ -100,42 +104,50 @@ body {
 }
 
 /* COUNTDOWN */
-.countdown-wrapper {
+/* NỀN MỜ PHÍA SAU (giống ảnh mẫu) */
+.countdown-glass {
   margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  padding: 20px 16px;
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 6px;
+  display: inline-block;
 }
 
+/* WRAPPER */
+.countdown-wrapper {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Ô THỜI GIAN */
 .time-box {
-  width: 72px;
-  height: 72px;
-  background: linear-gradient(
-    160deg,
-    var(--green-main),
-    var(--pink-main)
-  );
-  border-radius: 8px;
+  width: 70px;
+  height: 86px;                 /* CAO hơn → giống ảnh */
+  background: var(--green-dark); /* màu đặc */
+  border-radius: 4px;            /* bo góc rất nhẹ */
   color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 10px 25px rgba(95,127,106,0.35);
 }
 
+/* SỐ */
 .time-box span {
-  font-size: 26px;
+  font-size: 32px;   /* số to */
   font-weight: 600;
   line-height: 1;
 }
 
+/* ĐƠN VỊ */
 .time-box small {
-  margin-top: 6px;
+  margin-top: 8px;
   font-size: 12px;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  text-transform: lowercase;
   opacity: 0.9;
 }
 

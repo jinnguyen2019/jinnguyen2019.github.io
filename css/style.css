@@ -167,26 +167,51 @@ body {
 }
 
 :root {
-  --blue: #8fbcd4;
-  --pink: #f2b8c6;
-  --dark: #3a3a3a;
+  --green: #7fae9a;   /* xanh lá pastel */
+  --pink:  #f2b6c6;   /* hồng phấn */
+  --dark:  #3a3a3a;
+  --bg:    #faf9f7;
 }
 
 .section h3 {
-  color: var(--blue);
+  color: var(--green);
 }
 
 .rsvp button {
-  background: linear-gradient(45deg, var(--blue), var(--pink));
+  background: linear-gradient(45deg, var(--green), var(--pink));
+  color: #fff;
+  border: none;
 }
 
 .music-btn {
-  background: linear-gradient(45deg, var(--blue), var(--pink));
+  background: linear-gradient(45deg, var(--green), var(--pink));
+}
+
+.highlight {
+  color: var(--pink);
+}
+
+.cover-overlay {
+  background: rgba(70, 90, 80, 0.45);
+}
+
+.intro-box {
+  background: rgba(255,255,255,0.88);
+  border: 1px solid var(--pink);
+}
+
+.gallery img {
+  border: 3px solid #fff;
+}
+
+.gallery img:hover {
+  box-shadow: 0 10px 25px rgba(127,174,154,0.35);
 }
 
 /* FOOTER */
 footer {
   padding: 50px;
   text-align: center;
-  background: #eee;
+  background: #eef4f0;
+  color: var(--dark);
 }

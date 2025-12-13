@@ -303,14 +303,21 @@ body {
 }
 
 .couple-photo {
-  flex: 0 0 45%;
-  padding: 14px;
+  position: relative;
+  width: 100%;
+  max-width: 420px;        /* desktop không quá to */
+  margin: 0 auto;
+  padding: 12px;
   border: 2px solid #6b3f2c;
 }
 
+
 .couple-photo img {
   width: 100%;
+  height: auto;
   display: block;
+  object-fit: cover;
+  aspect-ratio: 3 / 4;   /* ⭐ tỉ lệ ảnh cưới chuẩn */
 }
 
 .couple-info {
@@ -403,6 +410,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  aspect-ratio: 1 / 1.1; /* hơi cao hơn vuông */
 }
 
 /* SỐ */
@@ -894,11 +902,22 @@ footer {
   }
 
   .couple-photo {
-    width: 100%;
+    max-width: 280px;
+    padding: 10px;
   }
 
   .couple-info {
     text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .couple-card {
+    gap: 24px;
+  }
+
+  .couple-photo {
+    max-width: 320px;     /* ⭐ chìa khoá cho mobile */
   }
 }
 

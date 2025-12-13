@@ -649,23 +649,6 @@ footer {
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
-.map-decor {
-  margin-top: 12px;
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  font-size: 18px;
-  opacity: 0.6;
-}
-
-.map-decor .leaf {
-  color: var(--green-main);
-}
-
-.map-decor .heart {
-  color: var(--pink-main);
-}
-
 /* Link mở Maps */
 .map-link {
   margin-top: 12px;
@@ -828,6 +811,106 @@ footer {
 .timeline-item.highlight .timeline-icon {
   background: #c88b8b; /* hồng */
 }
+
+/* time */
+.event-gradient-section {
+  padding: 70px 20px;
+  background: linear-gradient(
+    45deg,
+    var(--green-main),
+    var(--pink-main)
+  );
+}
+
+.event-card {
+  max-width: 420px;
+  margin: 0 auto;
+
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 16px;
+  padding: 36px 20px 40px;
+
+  text-align: center;
+}
+
+.event-title {
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.event-time {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.event-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 26px 0;
+}
+
+.event-date span {
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.event-date .day {
+  font-size: 48px;
+  font-weight: 600;
+  color: #7a2d2d;
+}
+
+.event-lunar {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 28px;
+}
+
+.event-location-title {
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.event-location {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.event-map {
+  max-width: 100%;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.event-map iframe {
+  width: 100%;
+  height: 220px;
+  border: 0;
+}
+
+.direction-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 22px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    45deg,
+    var(--green-main),
+    var(--pink-main)
+  );
+
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+}
+
 
 @keyframes float {
   0% {
@@ -995,6 +1078,18 @@ footer {
 
   .couple-info {
     text-align: left;
+  }
+
+  .event-card {
+    padding: 32px 18px;
+  }
+
+  .event-date .day {
+    font-size: 42px;
+  }
+
+  .event-map iframe {
+    height: 200px;
   }
 }
 

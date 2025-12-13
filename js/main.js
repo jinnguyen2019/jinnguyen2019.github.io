@@ -63,15 +63,18 @@ document.querySelectorAll(".gallery img").forEach(img => {
   img.addEventListener("click", () => {
     lightboxImg.src = img.src;
     lightbox.classList.remove("hidden");
+    lightbox.style.pointerEvents = "auto";
   });
 });
 
 closeBtn.addEventListener("click", () => {
   lightbox.classList.add("hidden");
+  lightbox.style.pointerEvents = "none";
 });
 
 lightbox.addEventListener("click", (e) => {
   if (e.target === lightbox) {
     lightbox.classList.add("hidden");
+    lightbox.style.pointerEvents = "none";
   }
 });

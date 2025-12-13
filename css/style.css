@@ -10,6 +10,8 @@ body {
   background: var(--cream);
   color: var(--dark);
   padding-bottom: env(safe-area-inset-bottom);
+  line-height: 1.7;          /* ⭐ chuẩn cho font này */
+  letter-spacing: 0.02em;    /* giúp chữ thoáng hơn trên mobile */
 }
 
 .hidden {
@@ -372,20 +374,22 @@ footer {
 .info-item {
   text-align: center;
   max-width: 260px;
+  font-size: 14px;
+  opacity: 0.75;
 }
 
 .info-item strong {
-  display: block;
-  font-size: 14px;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   color: var(--green-main);
 }
 
 .info-item span {
   display: block;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 /* MAP */

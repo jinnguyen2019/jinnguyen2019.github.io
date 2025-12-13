@@ -93,3 +93,34 @@ window.addEventListener("scroll", () => {
   lastScroll = current;
 });
 
+//Detect device
+const mapBtn = document.getElementById("openMap");
+
+if (mapBtn) {
+  mapBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const destination =
+      "Trung+tâm+Hội+nghị+%26+Tiệc+cưới+Gala";
+
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+      // iOS
+      window.location.href =
+        "https://maps.apple.com/?q=" + destination;
+    } else if (/android/i.test(ua)) {
+      // Android
+      window.location.href =
+        "https://www.google.com/maps/dir/?api=1&destination=" +
+        destination;
+    } else {
+      // Desktop
+      window.open(
+        "https://www.google.com/maps/place/" + destination,
+        "_blank"
+      );
+    }
+  });
+}
+

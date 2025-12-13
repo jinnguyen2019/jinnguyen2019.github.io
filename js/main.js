@@ -162,3 +162,62 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+//Change album image
+const albumImages = [
+  "assets/images/album/1.jpg",
+  "assets/images/album/2.jpg",
+  "assets/images/album/3.jpg",
+  "assets/images/album/4.jpg",
+  "assets/images/album/5.jpg"
+  "assets/images/album/6.jpg"
+];
+
+let currentIndex = 0;
+const albumImg = document.getElementById("albumImage");
+const prevBtn = document.querySelector(".album-nav.prev");
+const nextBtn = document.querySelector(".album-nav.next");
+
+function showImage(newIndex, direction) {
+  if (!albumImg) return;
+
+  const outClass =
+    direction === "next" ? "fade-out-left" : "fade-out-right";
+
+  albumImg.classList.add(outClass);
+
+  setTimeout(() => {
+    currentIndex = (newIndex + albumImages.length) % albumImages.length;
+    albumImg.src = albumImages[currentIndex];
+
+    albumImg.classList.remove(outClass);
+  }, 400);
+}
+
+prevBtn?.addEventListener("click", () => {
+  showImage(currentIndex - 1, "prev");
+});
+
+nextBtn?.addEventListener("click", () => {
+  showImage(currentIndex + 1, "next");
+});
+
+//For Mobile change image
+let startX = 0;
+
+albumImg?.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+});
+
+albumImg?.addEventListener("touchend", e => {
+  const endX = e.changedTouches[0].clientX;
+  const diff = endX - startX;
+
+  if (Math.abs(diff) > 40) {
+    if (diff > 0) {
+      showImage(currentIndex - 1, "prev");
+    } else {
+      showImage(currentIndex + 1, "next");
+    }
+  }
+});

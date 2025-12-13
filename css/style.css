@@ -27,9 +27,10 @@ body {
 }
 
 .intro-box {
-  background: rgba(255,255,255,0.85);
   padding: 50px;
   text-align: center;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid var(--pink-soft);
 }
 
 .intro-box h1 {
@@ -47,10 +48,13 @@ body {
 
 .cover-overlay {
   height: 100%;
-  background: rgba(0,0,0,0.35);
   color: #fff;
   text-align: center;
   padding-top: 30vh;
+  background: linear-gradient(
+      rgba(95, 127, 106, 0.55),
+      rgba(95, 127, 106, 0.35)
+    );
 }
 
 .cover h1 {
@@ -67,6 +71,7 @@ body {
 .section h3 {
   font-size: 28px;
   margin-bottom: 20px;
+  color: var(--green-main);
 }
 
 .desc {
@@ -198,7 +203,7 @@ body {
 }
 
 .gallery img:hover {
-  transform: scale(1.04);
+  box-shadow: 0 10px 25px rgba(127,174,154,0.35);
 }
 
 .music-btn {
@@ -234,32 +239,8 @@ body {
   --dark: #3a3a3a;
 }
 
-.section h3 {
-  color: var(--green-main);
-}
-
 .highlight {
   color: var(--pink);
-}
-
-.cover-overlay {
-  background: linear-gradient(
-    rgba(95, 127, 106, 0.55),
-    rgba(95, 127, 106, 0.35)
-  );
-}
-
-.intro-box {
-  background: rgba(255,255,255,0.9);
-  border: 1px solid var(--pink-soft);
-}
-
-.gallery img {
-  border: 3px solid #fff;
-}
-
-.gallery img:hover {
-  box-shadow: 0 10px 25px rgba(127,174,154,0.35);
 }
 
 /* FOOTER */
@@ -329,5 +310,21 @@ footer {
   .gallery img {
     height: 220px;
   }
-}
 
+  .time-box {
+    width: 64px;
+    height: 64px;
+  }
+
+  .time-box span {
+    font-size: 22px;
+  }
+
+  .time-box small {
+    font-size: 11px;
+  }
+
+  .countdown-wrapper {
+    gap: 10px;
+  }
+}

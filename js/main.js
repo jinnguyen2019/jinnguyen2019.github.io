@@ -162,3 +162,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+//Fade up card
+const eventCard = document.querySelector('.event-card');
+
+if (eventCard) {
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          eventCard.classList.add('in-view');
+          observer.unobserve(eventCard);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  observer.observe(eventCard);
+}

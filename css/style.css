@@ -831,7 +831,34 @@ footer {
   padding: 36px 20px 40px;
 
   text-align: center;
+  transform: translateY(30px);
+  transition:
+  opacity 0.8s ease,
+  transform 0.8s ease;
 }
+
+.event-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.event-location {
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.event-location strong {
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.event-address {
+  font-size: 14px;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
 
 .event-title {
   font-size: 20px;
@@ -875,10 +902,11 @@ footer {
   margin-bottom: 10px;
 }
 
-.event-location {
-  font-size: 15px;
+.event-time .icon,
+.event-location .icon {
+  font-size: 14px;
   line-height: 1.6;
-  margin-bottom: 24px;
+  opacity: 0.8;
 }
 
 .event-map {
@@ -1090,6 +1118,15 @@ footer {
 
   .event-map iframe {
     height: 200px;
+  }
+
+  .event-time,
+  .event-location {
+    font-size: 14px;
+  }
+
+  .event-card {
+    padding: 30px 18px;
   }
 }
 

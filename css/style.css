@@ -140,6 +140,11 @@ body {
   font-size: 32px;   /* số to */
   font-weight: 600;
   line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.time-box span.tick {
+  transform: translateY(-4px);
 }
 
 /* ĐƠN VỊ */
@@ -149,6 +154,11 @@ body {
   letter-spacing: 1px;
   text-transform: lowercase;
   opacity: 0.9;
+}
+
+.time-box:nth-child(2),
+.time-box:nth-child(4) {
+  background: #8b5a68; /* hồng trầm rất nhẹ */
 }
 
 /* RSVP */
@@ -324,13 +334,17 @@ footer {
   }
 
   .time-box {
-    width: 64px;
-    height: 64px;
-  }
+      width: 62px;
+      height: 80px;
+    }
 
   .time-box span {
-    font-size: 22px;
-  }
+      font-size: 28px;
+    }
+
+    .countdown-glass {
+      padding: 16px 12px;
+    }
 
   .time-box small {
     font-size: 11px;

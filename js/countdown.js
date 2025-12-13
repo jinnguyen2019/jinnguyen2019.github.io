@@ -19,3 +19,12 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
+function tick(id) {
+  const el = document.getElementById(id);
+  el.classList.add("tick");
+  setTimeout(() => el.classList.remove("tick"), 300);
+}
+
+// gọi sau khi set innerText
+tick("cd-seconds");

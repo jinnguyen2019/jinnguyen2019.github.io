@@ -365,11 +365,11 @@ body {
 }
 
 .countdown-grid {
-  max-width: 420px;
+  max-width: 520px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
+  grid-template-columns: repeat(2, 1fr); /* mỗi cột giãn đều */
+  gap: 20px;
 }
 
 .countdown-section {
@@ -392,15 +392,17 @@ body {
 /* NỀN MỜ PHÍA SAU (giống ảnh mẫu) */
 /* Ô THỜI GIAN */
 .time-box {
-  width: 70px;
-  height: 86px;                 /* CAO hơn → giống ảnh */
-  background: var(--green-dark); /* màu đặc */
-  border-radius: 4px;            /* bo góc rất nhẹ */
-  color: #fff;
+  width: 100%;              /* ⭐ bắt buộc */
+  min-width: 140px;         /* ⭐ không bị gầy */
+  padding: 22px 12px;
+
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 10px;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 /* SỐ */
@@ -427,6 +429,19 @@ body {
 .time-box:nth-child(2),
 .time-box:nth-child(4) {
   background: #8b5a68; /* hồng trầm rất nhẹ */
+}
+
+.time-number {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap; /* không cho gãy số */
+}
+
+.time-label {
+  margin-top: 6px;
+  font-size: 13px;
+  letter-spacing: 1px;
 }
 
 /* RSVP */
@@ -790,19 +805,6 @@ footer {
     height: 220px;
   }
 
-  .time-box {
-    width: 62px;
-    height: 80px;
-  }
-
-  .time-box span {
-    font-size: 28px;
-  }
-
-  .time-box small {
-    font-size: 11px;
-  }
-
   .map-wrapper iframe {
     height: 260px;
   }
@@ -863,12 +865,27 @@ footer {
     font-size: 16px;
   }
 
+  .countdown-grid {
+    max-width: 100%;
+    padding: 0 10px;
+    gap: 14px;
+  }
+
+  .time-box {
+    min-width: unset;   /* cho mobile linh hoạt */
+    padding: 18px 8px;
+  }
+
   .time-number {
     font-size: 30px;
   }
 
-  .countdown-grid {
-    gap: 14px;
+  .time-box span {
+    font-size: 28px;
+  }
+
+  .time-box small {
+    font-size: 11px;
   }
 
   .couple-card,

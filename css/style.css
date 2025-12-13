@@ -286,16 +286,61 @@ body {
 }
 
 /* COUPLE */
-.couple {
-  display: flex;
-  justify-content: center;
-  gap: 120px;
+.couple-section {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.couple span {
-  font-size: 14px;
-  letter-spacing: 2px;
+.couple-card {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 80px;
+  align-items: center;
 }
+
+.couple-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.couple-photo {
+  flex: 0 0 45%;
+  padding: 14px;
+  border: 2px solid #6b3f2c;
+}
+
+.couple-photo img {
+  width: 100%;
+  display: block;
+}
+
+.couple-info {
+  flex: 1;
+}
+
+.couple-info h3 {
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.couple-info .desc,
+.couple-info .quote {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.signature {
+  font-family: 'Great Vibes', cursive;
+  font-size: 34px;
+  margin: 20px 0 10px;
+}
+
+.parent {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
 
 /* COUNTDOWN */
 .countdown-title {
@@ -824,6 +869,19 @@ footer {
 
   .countdown-grid {
     gap: 14px;
+  }
+
+  .couple-card,
+  .couple-card.reverse {
+    flex-direction: column;
+  }
+
+  .couple-photo {
+    width: 100%;
+  }
+
+  .couple-info {
+    text-align: left;
   }
 }
 

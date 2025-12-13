@@ -298,6 +298,29 @@ body {
 }
 
 /* COUNTDOWN */
+.countdown-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.countdown-title .subtitle {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  letter-spacing: 1px;
+  opacity: 0.9;
+  margin-bottom: 6px;
+}
+
+.countdown-title .main-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 52px;
+  font-weight: normal;
+  line-height: 1;
+}
+
 /* NỀN MỜ PHÍA SAU (giống ảnh mẫu) */
 .countdown-glass {
   margin-top: 40px;
@@ -787,6 +810,14 @@ footer {
 
   .stacked .heart-icon {
     margin: 4px 0;
+  }
+
+  .countdown-title .subtitle {
+    font-size: 16px;
+  }
+
+  .countdown-title .main-title {
+    font-size: 38px;
   }
 }
 

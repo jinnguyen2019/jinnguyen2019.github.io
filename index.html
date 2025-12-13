@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thiệp Cưới | Trần Nhân Ái & Nguyễn Minh Anh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font giống CineLove -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Nhạc nền -->
+<audio id="bgMusic" loop>
+    <source src="music/i-do.mp3" type="audio/mpeg">
+</audio>
+
+<!-- MÀN MỞ THIỆP -->
+<div id="intro" class="intro">
+    <div class="intro-content">
+        <p>Wedding Invitation</p>
+        <h1>Trần Nhân Ái &<br>Nguyễn Minh Anh</h1>
+        <span>Chạm để mở thiệp</span>
+    </div>
+</div>
+
+<!-- NỘI DUNG CHÍNH -->
+<div id="content" class="hidden">
+
+    <!-- COVER -->
+    <section class="cover">
+        <div class="overlay">
+            <h2>Save The Date</h2>
+            <h1>Trần Nhân Ái & Nguyễn Minh Anh</h1>
+            <p>27 . 12 . 2025</p>
+            <div id="countdown"></div>
+        </div>
+    </section>
+
+    <!-- THÔNG TIN TIỆC -->
+    <section class="section">
+        <h3>Trân Trọng Kính Mời</h3>
+        <p>
+            Đến dự buổi tiệc chung mừng lễ thành hôn của chúng tôi
+        </p>
+        <div class="info-box">
+            <p><strong>Thời gian:</strong> Thứ Bảy, 27/12/2025</p>
+            <p><strong>Địa điểm:</strong> (Bạn điền sau)</p>
+        </div>
+    </section>
+
+    <!-- CÔ DÂU & CHÚ RỂ -->
+    <section class="section couple">
+        <div>
+            <h4>Cô Dâu</h4>
+            <p>Trần Nhân Ái</p>
+        </div>
+        <div>
+            <h4>Chú Rể</h4>
+            <p>Nguyễn Minh Anh</p>
+        </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section">
+        <h3>Xác Nhận Tham Dự</h3>
+        <form class="rsvp">
+            <input type="text" placeholder="Họ và tên" required>
+            <select>
+                <option>Xin xác nhận tham dự</option>
+                <option>Rất tiếc không tham dự</option>
+            </select>
+            <input type="number" placeholder="Số người tham dự" min="1">
+            <button type="submit">Gửi lời chúc</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Trần Nhân Ái & Nguyễn Minh Anh</p>
+        <span>27.12.2025</span>
+    </footer>
+
+</div>
+
+<script src="js/countdown.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

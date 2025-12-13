@@ -754,37 +754,62 @@ footer {
 
 /* Timeline */
 .timeline-section {
+  position: relative;
   background: #f8efe6;
-  padding: 80px 20px;
+  padding: 100px 20px 80px;
   text-align: center;
+  overflow: hidden;
 }
 
 .timeline-title {
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .timeline-title .script {
   font-family: 'Great Vibes', cursive;
-  font-size: 48px;
+  font-size: 54px;
   display: block;
 }
 
 .timeline-title .normal {
-  letter-spacing: 3px;
-  font-size: 16px;
+  font-size: 15px;
+  letter-spacing: 4px;
 }
 
 .timeline {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
+  gap: 48px;
+  position: relative;
+}
+
+/* Đường chấm nối */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 36px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    #c7b299,
+    #c7b299 6px,
+    transparent 6px,
+    transparent 14px
+  );
 }
 
 .timeline-item {
-  width: 160px;
-  text-align: center;
+  width: 150px;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-item p {
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .timeline-icon {
@@ -802,27 +827,6 @@ footer {
 
 .timeline-item.highlight .timeline-icon {
   background: #c88b8b; /* hồng */
-}
-
-.timeline-text {
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.timeline-text strong {
-  font-size: 15px;
-}
-
-.timeline-line {
-  width: 60px;
-  height: 2px;
-  background: repeating-linear-gradient(
-    to right,
-    #c7b299,
-    #c7b299 6px,
-    transparent 6px,
-    transparent 12px
-  );
 }
 
 @keyframes float {

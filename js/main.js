@@ -75,18 +75,3 @@ lightbox.addEventListener("click", (e) => {
     lightbox.classList.add("hidden");
   }
 });
-
-// floating-leaves
-let lastScroll = 0;
-const leaves = document.querySelector(".floating-leaves");
-
-window.addEventListener("scroll", () => {
-  const current = window.scrollY;
-
-  if (Math.abs(current - lastScroll) > 20) {
-    leaves.style.opacity = 1;
-  }
-
-  lastScroll = current;
-});
-

@@ -124,3 +124,19 @@ if (mapBtn) {
   });
 }
 
+//Click Intro open Card
+const envelope = document.getElementById("openEnvelope");
+const intro = document.getElementById("intro");
+const main = document.getElementById("main");
+const music = document.getElementById("music");
+
+envelope.addEventListener("click", () => {
+  envelope.classList.add("open");
+
+  setTimeout(() => {
+    intro.style.display = "none";
+    main.classList.remove("hidden");
+    music.play();
+  }, 1200);
+});
+

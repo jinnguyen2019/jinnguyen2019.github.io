@@ -31,18 +31,101 @@ body {
   min-height: 100vh;  /* fallback */
 }
 
+/*
 .intro-box {
   padding: 50px;
   text-align: center;
   background: rgba(255,255,255,0.9);
   border: 1px solid var(--pink-soft);
 }
+*/
 
-.intro-box h1 {
+.intro-names {
   font-family: 'Great Vibes', cursive;
-  font-size: 48px;
-  margin: 20px 0;
+  font-size: 42px;
+  color: #2f2f2f;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
 }
+
+.intro-names span {
+  margin: 0 12px;
+}
+
+.intro-envelope {
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fbf3ee;
+  text-align: center;
+}
+
+.names-top {
+  margin-bottom: 20px;
+}
+
+.envelope {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  cursor: pointer;
+  perspective: 800px;
+}
+
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  background: #8b2f2f;
+  border-radius: 6px;
+}
+
+.envelope-front {
+  position: absolute;
+  inset: 0;
+  background: #a03a3a;
+  clip-path: polygon(0 0, 100% 0, 50% 60%);
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: #7a2525;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top;
+  transition: transform 1s ease;
+  z-index: 5;
+}
+
+.envelope-letter {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  height: 120px;
+  background: #fff;
+  border-radius: 4px;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: all 1s ease;
+  z-index: 2;
+  padding: 20px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.envelope.open .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.envelope.open .envelope-letter {
+  transform: translateY(-20px);
+  opacity: 1;
+}
+
 
 /* COVER */
 .cover {
@@ -672,6 +755,15 @@ footer {
     .map-mobile-btn {
       display: inline-block; /* ✅ hiện nút */
     }
+    
+    .envelope {
+        width: 240px;
+        height: 160px;
+      }
+
+      .intro-names {
+        font-size: 36px;
+      }
 }
 
 .hidden {

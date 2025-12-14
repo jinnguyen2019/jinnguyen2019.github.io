@@ -116,30 +116,6 @@ statusRadios.forEach(radio => {
 });
 
 //light box when click album
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const closeBtn = document.querySelector(".lightbox-close");
-
-//document.querySelectorAll(".gallery img").forEach(img => {
-//  img.addEventListener("click", () => {
-//    lightboxImg.src = img.src;
-//    lightbox.classList.remove("hidden");
-//    lightbox.style.pointerEvents = "auto";
-//  });
-//});
-
-//closeBtn.addEventListener("click", () => {
-//  lightbox.classList.add("hidden");
-//  lightbox.style.pointerEvents = "none";
-//});
-//
-//lightbox.addEventListener("click", (e) => {
-//  if (e.target === lightbox) {
-//    lightbox.classList.add("hidden");
-//    lightbox.style.pointerEvents = "none";
-//  }
-//});
-
 const albumImages = [
   "assets/images/cover.jpg",
   "assets/images/1.jpg",
@@ -195,10 +171,34 @@ albumImg.addEventListener("touchend", e => {
   }
 });
 
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".lightbox-close");
+
+//document.querySelectorAll(".gallery img").forEach(img => {
+//  img.addEventListener("click", () => {
+//    lightboxImg.src = img.src;
+//    lightbox.classList.remove("hidden");
+//    lightbox.style.pointerEvents = "auto";
+//  });
+//});
+
 albumImg.addEventListener("click", () => {
   lightboxImg.src = albumImg.src;
   lightbox.classList.remove("hidden");
   lightbox.style.pointerEvents = "auto";
+});
+
+closeBtn.addEventListener("click", () => {
+  lightbox.classList.add("hidden");
+  lightbox.style.pointerEvents = "none";
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.add("hidden");
+    lightbox.style.pointerEvents = "none";
+  }
 });
 
 //floating-leaf

@@ -12,19 +12,10 @@ if (envelope) {
       introEl.style.display = "none";
       mainEl.classList.remove("hidden");
 
-      // ⭐ KÍCH HOẠT FADE-IN COVER CARD
-      const coverCard = document.querySelector(".cover-card");
-      if (coverCard) {
-        coverCard.classList.remove("show");
-        void coverCard.offsetWidth; // force reflow cho Safari
-        coverCard.classList.add("show");
-      }
-
       musicEl.play().catch(() => {
         // iOS cần user interaction, ignore lỗi
       });
     }, 1200);
-
   });
 }
 

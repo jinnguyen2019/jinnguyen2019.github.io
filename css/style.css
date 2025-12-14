@@ -972,9 +972,19 @@ footer {
 }
 
 .timeline-row {
+  display: grid;
+  grid-template-columns: 64px 56px 1fr;
+  align-items: center;
+
+  margin-bottom: 48px;
+
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
+  transform: translateY(24px);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+
   will-change: transform, opacity;
 }
 
@@ -1310,7 +1320,8 @@ footer {
   }
 
   .timeline-row {
-    grid-template-columns: 44px 36px 1fr;
+    grid-template-columns: 52px 44px 1fr;
+    margin-bottom: 40px;
   }
 
   .timeline-content {

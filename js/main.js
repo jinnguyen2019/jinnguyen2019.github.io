@@ -128,6 +128,13 @@ document.addEventListener("DOMContentLoaded", () => {
     "assets/images/7.jpg"
   ];
 
+  // ⭐ preload ảnh
+  albumImages.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+
+
   let albumIndex = 0;
 
   const albumImg = document.getElementById("albumImage");
@@ -137,10 +144,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function showAlbumImage(index) {
     albumImg.style.opacity = 0;
 
-    setTimeout(() => {
-      albumImg.src = albumImages[index];
+    const tempImg = new Image();
+    tempImg.src = albumImages[index];
+
+    tempImg.onload = () => {
+      albumImg.src = tempImg.src;
       albumImg.style.opacity = 1;
-    }, 200);
+    };
   }
 
   prevBtn.addEventListener("click", () => {

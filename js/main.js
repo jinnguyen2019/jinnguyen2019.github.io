@@ -1,18 +1,8 @@
-// Click Intro open Card
+//Click Intro open Card
 const envelope = document.getElementById("openEnvelope");
 const introEl = document.getElementById("intro");
 const mainEl = document.getElementById("main");
 const musicEl = document.getElementById("music");
-
-function showCoverCard() {
-  const coverCard = document.querySelector(".cover-card");
-  if (!coverCard) return;
-
-  // force reflow để animation chạy ổn định (đặc biệt Safari)
-  coverCard.classList.remove("show");
-  void coverCard.offsetWidth;
-  coverCard.classList.add("show");
-}
 
 if (envelope) {
   envelope.addEventListener("click", () => {
@@ -21,9 +11,6 @@ if (envelope) {
     setTimeout(() => {
       introEl.style.display = "none";
       mainEl.classList.remove("hidden");
-
-      // ⭐ CHỖ ĐẶT ĐÚNG NHẤT
-      showCoverCard();
 
       musicEl.play().catch(() => {
         // iOS cần user interaction, ignore lỗi
@@ -327,15 +314,3 @@ document.addEventListener("DOMContentLoaded", () => {
     rows.forEach(row => observer.observe(row));
   }
 });
-
-function showCoverCard() {
-  const coverCard = document.querySelector(".cover-card");
-  if (!coverCard) return;
-
-  // force reflow để animation luôn chạy (Safari rất cần)
-  coverCard.classList.remove("show");
-  void coverCard.offsetWidth;
-
-  coverCard.classList.add("show");
-}
-

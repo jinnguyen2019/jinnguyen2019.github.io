@@ -885,8 +885,14 @@ footer {
 }
 
 .timeline-vertical {
-  max-width: 720px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+
+  margin-top: 48px;
+  padding: 32px 16px;
+
+  background: rgba(250, 245, 242, 0.9);
+  border-radius: 14px;
 }
 
 .timeline-row {
@@ -899,7 +905,7 @@ footer {
 .timeline-icon {
   width: 24px;
   height: 24px;
-  color: #fff;
+  color: #7a2d2d; /* nâu đỏ trang trọng */
 }
 
 .timeline-svg {
@@ -919,7 +925,7 @@ footer {
   top: -32px;
   bottom: -32px;
   width: 2px;
-  background: rgba(255,255,255,0.6);
+  background: rgba(180, 140, 150, 0.45); /* hồng nâu nhạt */
 }
 
 .timeline-heart {
@@ -940,7 +946,7 @@ footer {
   content: "";
   width: 14px;
   height: 14px;
-  background: inherit;
+  background: var(--pink-main);
   border-radius: 50%;
   position: absolute;
 }
@@ -957,7 +963,7 @@ footer {
 
 .timeline-content {
   font-size: 20px;
-  color: #fff;
+  color: #5a4a4a;
   line-height: 1.5;
 }
 
@@ -969,6 +975,7 @@ footer {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease;
+  will-change: transform, opacity;
 }
 
 .timeline-row.in-view {
@@ -1312,6 +1319,10 @@ footer {
 
   .rsvp-card {
     padding: 28px 18px;
+  }
+
+  .timeline-vertical {
+    padding: 24px 12px;
   }
 }
 

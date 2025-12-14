@@ -951,6 +951,10 @@ footer {
   color: var(--dark);
 }
 
+footer p:first-child {
+  white-space: nowrap;
+}
+
 /* MAP */
 /* Desktop map */
 .map-desktop {
@@ -1600,6 +1604,12 @@ footer {
       transparent 6px,
       transparent 12px
     );
+  }
+}
+
+@media (max-width: 375px) {
+  footer p:first-child {
+    font-size: 0.9em;
   }
 }
 

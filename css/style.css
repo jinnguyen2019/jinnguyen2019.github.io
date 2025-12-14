@@ -82,6 +82,59 @@ body {
   );
 }
 
+.envelope-seal {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle at top left,
+    #ffb6c1,
+    var(--pink-main)
+  );
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.25),
+    inset 0 2px 6px rgba(255, 255, 255, 0.6);
+
+  z-index: 6;
+}
+
+.envelope-seal::after {
+  content: "A♡A";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  font-size: 22px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.envelope-seal {
+  animation: sealPulse 2.6s ease-in-out infinite;
+}
+
+@keyframes sealPulse {
+  0%   { transform: translate(-50%, -50%) scale(1); }
+  50%  { transform: translate(-50%, -50%) scale(1.06); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+.envelope.open .envelope-seal {
+  animation: none;
+  transform: translate(-50%, -50%) scale(0.85) rotate(20deg);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.4s ease;
+}
+
 .envelope-back {
   position: absolute;
   inset: 0;
@@ -1367,6 +1420,11 @@ footer {
   .envelope {
     width: 240px;
     height: 160px;
+  }
+
+  .envelope-seal {
+    width: 48px;
+    height: 48px;
   }
 
   .intro-names {

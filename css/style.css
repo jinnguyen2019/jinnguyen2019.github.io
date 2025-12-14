@@ -214,7 +214,7 @@ body {
   transition: all 1s ease;
   z-index: 2;
   padding: 20px;
-  font-family: 'Great Vibes', serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .envelope.open .envelope-flap {

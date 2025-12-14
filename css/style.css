@@ -247,11 +247,10 @@ body {
 */
 
 .cover-card {
-  position: relative;
-  right: 6%;
+  right: 50%;
+  transform: translateX(50%);
   bottom: 6%;
   width: 90%;
-  padding: 26px 24px;
   text-align: center;
 
   /* nền trong suốt hơn một chút */
@@ -264,7 +263,7 @@ body {
 
   /* trạng thái ban đầu */
   opacity: 0;
-  transform: translateX(50%) translateY(20px) scale(0.98);
+  transform: translateY(20px) scale(0.98);
 
   /* tránh giật */
   will-change: opacity, transform;

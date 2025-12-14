@@ -453,6 +453,32 @@ body {
 }
 
 /* RSVP */
+/*
+.rsvp {
+  max-width: 360px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.rsvp input,
+.rsvp select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.rsvp button {
+  background: linear-gradient(
+    45deg,
+    var(--green-main),
+    var(--pink-main)
+  );
+  color: #fff;
+}
+*/
+
 .rsvp-section {
   padding: 80px 20px;
   background: linear-gradient(
@@ -538,7 +564,6 @@ body {
   font-size: 15px;
   cursor: pointer;
 }
-
 
 /* Fade when scroll */
 .fade-in {

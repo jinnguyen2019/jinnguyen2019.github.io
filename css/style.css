@@ -532,19 +532,30 @@ body {
 .radio-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  align-items: flex-start;
 }
 
 .radio-group label {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 14px;
+  gap: 10px;
+  width: 100%;
   cursor: pointer;
 }
 
-.radio-group input {
+.radio-group input[type="radio"] {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
   accent-color: var(--pink-main);
+  transform: scale(1.1);
+}
+
+.radio-group span {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .rsvp-btn {

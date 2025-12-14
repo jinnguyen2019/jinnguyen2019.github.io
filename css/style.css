@@ -87,39 +87,54 @@ body {
   top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
 
   background: radial-gradient(
-    circle at top left,
+    circle at 30% 30%,
     #ffb6c1,
-    var(--pink-main)
+    #e36a84 60%,
+    #c94f6a
   );
 
   box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.25),
-    inset 0 2px 6px rgba(255, 255, 255, 0.6);
+    inset 0 2px 6px rgba(255,255,255,0.6),
+    inset 0 -4px 8px rgba(0,0,0,0.25),
+    0 6px 14px rgba(0,0,0,0.35);
 
-  z-index: 6;
+  z-index: 10;
+
+  animation: sealPulse 3s ease-in-out infinite;
 }
 
-.envelope-seal::after {
-  content: "A♡A";
+.seal-text {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  color: #fff;
-  font-size: 22px;
   font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  color: #7a1f33;
+
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.35),
+    0 -1px 1px rgba(0,0,0,0.35);
 }
 
-.envelope-seal {
-  animation: sealPulse 2.6s ease-in-out infinite;
+.envelope-seal::before,
+.envelope-seal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0;
 }
 
 @keyframes sealPulse {
@@ -130,9 +145,21 @@ body {
 
 .envelope.open .envelope-seal {
   animation: none;
-  transform: translate(-50%, -50%) scale(0.85) rotate(20deg);
+  transform: translate(-50%, -50%) scale(0.9);
   opacity: 0;
-  transition: transform 0.5s ease, opacity 0.4s ease;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.envelope.open .envelope-seal::before {
+  opacity: 1;
+  transform: translate(-8px, -6px) rotate(-15deg);
+  transition: transform 0.5s ease;
+}
+
+.envelope.open .envelope-seal::after {
+  opacity: 1;
+  transform: translate(10px, 6px) rotate(18deg);
+  transition: transform 0.5s ease;
 }
 
 .envelope-back {
@@ -1423,8 +1450,12 @@ footer {
   }
 
   .envelope-seal {
-    width: 48px;
-    height: 48px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .seal-text {
+    font-size: 18px;
   }
 
   .intro-names {

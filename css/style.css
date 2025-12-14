@@ -151,6 +151,7 @@ body {
   width: 26px;
   height: 18px;
   margin: 0 10px;
+  color: var(--pink-main);
   background: url("data:image/svg+xml,%3Csvg viewBox='0 0 64 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 8c-6 0-10 4-10 10 0 12 22 22 22 22s22-10 22-22c0-6-4-10-10-10-5 0-8 3-12 7-4-4-7-7-12-7z' fill='%23e7b6c3'/%3E%3Cpath d='M20 10c-5 0-8 3-8 8 0 9 20 19 20 19s20-10 20-19c0-5-3-8-8-8-4 0-6 2-10 6-4-4-6-6-10-6z' fill='%235f7f6a' opacity='0.9'/%3E%3C/svg%3E") center/contain no-repeat;
 }
 
@@ -160,8 +161,8 @@ body {
 }
 
 .heart-icon.large {
-  width: 27px;
-  height: 30px;
+  width: 37px;
+  height: 40px;
 }
 
 /* COVER */

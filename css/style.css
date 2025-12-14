@@ -899,7 +899,19 @@ footer {
   display: grid;
   grid-template-columns: 64px 56px 1fr;
   align-items: center;
+
   margin-bottom: 48px;
+
+  opacity: 0;
+  transform: translateY(24px);
+
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: transform, opacity;
+}
+
+.timeline-row.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .timeline-icon {
@@ -971,25 +983,6 @@ footer {
 
 .timeline-content strong {
   font-weight: 600;
-}
-
-.timeline-row {
-  display: grid;
-  grid-template-columns: 64px 56px 1fr;
-  align-items: center;
-
-  margin-bottom: 48px;
-
-  opacity: 0;
-  transform: translateY(24px);
-
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  will-change: transform, opacity;
-}
-
-.timeline-row.in-view {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .timeline-leaf {

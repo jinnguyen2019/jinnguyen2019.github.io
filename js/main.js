@@ -309,15 +309,26 @@ if (eventCard) {
 }
 
 //Timeline
-document.querySelectorAll('.timeline-row').forEach(row => {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
+document.addEventListener("DOMContentLoaded", () => {
+  const rows = document.querySelectorAll(".timeline-row");
 
-  observer.observe(row);
+  rows.forEach(row => {
+    row.classList.add("in-view"); // fallback luôn hiện
+  });
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    rows.forEach(row => observer.observe(row));
+  }
 });

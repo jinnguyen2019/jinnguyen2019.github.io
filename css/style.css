@@ -978,7 +978,7 @@ footer {
 
   margin-bottom: 48px;
 
-  opacity: 0;
+  opacity: 1;
   transform: translateY(24px);
 
   transition:

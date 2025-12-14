@@ -964,7 +964,9 @@ footer {
 .timeline-content {
   font-size: 20px;
   color: #5a4a4a;
-  line-height: 1.5;
+  line-height: 1.6;
+  text-align: left;
+  justify-self: start;
 }
 
 .timeline-content strong {
@@ -1323,6 +1325,7 @@ footer {
 
   .timeline-content {
     font-size: 14px;
+    text-align: left;
   }
 
   .rsvp-card {

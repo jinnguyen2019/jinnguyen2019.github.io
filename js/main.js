@@ -189,19 +189,30 @@ const closeBtn = document.querySelector(".lightbox-close");
 
 albumImg.addEventListener("click", () => {
   lightboxImg.src = albumImg.src;
+
   lightbox.classList.remove("hidden");
+
+  // force reflow để animation + pointer-events hoạt động
+  void lightbox.offsetWidth;
+
+  lightbox.classList.add("show");
   lightbox.style.pointerEvents = "auto";
 });
 
-closeBtn.addEventListener("click", () => {
-  lightbox.classList.add("hidden");
-  lightbox.style.pointerEvents = "none";
-});
+function closeLightbox() {
+  lightbox.classList.remove("show");
+
+  setTimeout(() => {
+    lightbox.classList.add("hidden");
+    lightbox.style.pointerEvents = "none";
+  }, 300);
+}
+
+closeBtn.addEventListener("click", closeLightbox);
 
 lightbox.addEventListener("click", (e) => {
   if (e.target === lightbox) {
-    lightbox.classList.add("hidden");
-    lightbox.style.pointerEvents = "none";
+    closeLightbox();
   }
 });
 

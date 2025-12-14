@@ -453,29 +453,92 @@ body {
 }
 
 /* RSVP */
-.rsvp {
-  max-width: 360px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.rsvp input,
-.rsvp select {
-  padding: 12px;
-  border: 1px solid #ccc;
-  background: #fff;
-}
-
-.rsvp button {
+.rsvp-section {
+  padding: 80px 20px;
   background: linear-gradient(
     45deg,
     var(--green-main),
     var(--pink-main)
   );
-  color: #fff;
 }
+
+.rsvp-card {
+  max-width: 420px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 24px 36px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.rsvp-title {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  opacity: 0.9;
+}
+
+.rsvp-form input,
+.rsvp-form select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.rsvp-form input:focus,
+.rsvp-form select:focus {
+  outline: none;
+  border-color: var(--pink-main);
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.radio-group input {
+  accent-color: var(--pink-main);
+}
+
+.rsvp-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    45deg,
+    var(--green-main),
+    var(--pink-main)
+  );
+
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
 
 /* Fade when scroll */
 .fade-in {
@@ -1117,6 +1180,10 @@ footer {
 
   .timeline-content {
     font-size: 14px;
+  }
+
+  .rsvp-card {
+    padding: 28px 18px;
   }
 }
 

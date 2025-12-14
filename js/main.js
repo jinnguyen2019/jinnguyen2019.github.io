@@ -49,19 +49,54 @@ toggleBtn.addEventListener("click", () => {
 });
 
 //rsvp
-document.getElementById("rsvpForm").addEventListener("submit", function(e) {
+document.getElementById("rsvpForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  fetch("https://script.google.com/macros/s/AKfycbyN6BQoqbOI54DW71S0HIJLRGUD2Yw3t3qmiQgKkbbd1oybJ7RTlrUXasY-hMa8oBec3g/exec", {
-    method: "POST",
-    body: JSON.stringify({
-      name: document.getElementById("name").value,
-      status: document.getElementById("status").value
+  const name = document.getElementById("name").value.trim();
+
+  const status = document.querySelector(
+    'input[name="status"]:checked'
+  )?.value;
+
+  const guest = document.getElementById("guest").value;
+
+  if (!name || !status) {
+    alert("Vui lòng nhập đầy đủ thông tin 💌");
+    return;
+  }
+
+  fetch(
+    "https://script.google.com/macros/s/AKfycbyN6BQoqbOI54DW71S0HIJLRGUD2Yw3t3qmiQgKkbbd1oybJ7RTlrUXasY-hMa8oBec3g/exec",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        status: status,
+        guest: guest,
+      }),
+    }
+  )
+    .then(() => {
+      alert("Cảm ơn bạn đã xác nhận 💙");
+      this.reset();
     })
-  })
-  .then(() => {
-    alert("Cảm ơn bạn đã xác nhận 💙");
-    this.reset();
+    .catch(() => {
+      alert("Có lỗi xảy ra, vui lòng thử lại sau 🙏");
+    });
+});
+
+const statusRadios = document.querySelectorAll('input[name="status"]');
+const guestGroup = document.getElementById("guest").closest(".form-group");
+
+statusRadios.forEach(radio => {
+  radio.addEventListener("change", () => {
+    guestGroup.style.display =
+      radio.value === "Không tham dự" && radio.checked
+        ? "none"
+        : "block";
   });
 });
 

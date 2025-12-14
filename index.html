@@ -147,12 +147,6 @@
 
         </div>
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
         <section class="timeline-gradient-section">-->
 
             <div class="timeline-vertical">
@@ -341,16 +335,70 @@
     </section>
 
     <!-- RSVP -->
-    <section class="section fade-in">
-        <h3>Xác Nhận Tham Dự</h3>
-        <form class="rsvp" id="rsvpForm">
-            <input type="text" id="name" placeholder="Quý danh" required>
-            <select id="status">
-                <option value="Tham dự">Tham dự</option>
-                <option value="Không tham dự">Không tham dự</option>
-            </select>
-            <button type="submit">Phản Hồi Tham Dự</button>
-        </form>
+<!--    <section class="section fade-in">-->
+<!--        <h3>Xác Nhận Tham Dự</h3>-->
+<!--        <form class="rsvp" id="rsvpForm">-->
+<!--            <input type="text" id="name" placeholder="Quý danh" required>-->
+<!--            <select id="status">-->
+<!--                <option value="Tham dự">Tham dự</option>-->
+<!--                <option value="Không tham dự">Không tham dự</option>-->
+<!--            </select>-->
+<!--            <button type="submit">Phản Hồi Tham Dự</button>-->
+<!--        </form>-->
+<!--    </section>-->
+    <section class="section fade-in rsvp-section">
+        <div class="rsvp-card">
+
+            <h3 class="rsvp-title">Xác nhận tham dự</h3>
+
+            <form class="rsvp-form" id="rsvpForm">
+
+                <!-- Họ và tên -->
+                <div class="form-group">
+                    <label for="name">Họ và tên</label>
+                    <input
+                            type="text"
+                            id="name"
+                            placeholder="Nhập tên của bạn"
+                            required
+                    />
+                </div>
+
+                <!-- Tham dự -->
+                <div class="form-group">
+                    <label>Bạn sẽ tham dự chứ?</label>
+
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="status" value="Tham dự" checked />
+                            <span>Có, tôi sẽ tham dự</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="status" value="Không tham dự" />
+                            <span>Tôi bận, rất tiếc không thể tham dự</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Số lượng -->
+                <div class="form-group">
+                    <label for="guest">Số lượng người tham dự</label>
+                    <select id="guest">
+                        <option value="1">1 người</option>
+                        <option value="2">2 người</option>
+                        <option value="3">3 người</option>
+                        <option value="4">4 người</option>
+                    </select>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="rsvp-btn">
+                    Gửi xác nhận
+                </button>
+
+            </form>
+        </div>
     </section>
 
     <footer>

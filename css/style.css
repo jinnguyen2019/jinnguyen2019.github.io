@@ -589,7 +589,8 @@ body {
   transform: translateY(0);
 }
 
-/* Gallery */
+/* ALBUM */
+/*
 .gallery {
   margin-top: 40px;
   display: grid;
@@ -611,6 +612,64 @@ body {
   box-shadow: 0 10px 25px rgba(127,174,154,0.35);
   transform: scale(1.05);
 }
+*/
+
+.album-slider {
+  position: relative;
+  max-width: 420px;
+  margin: 40px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.album-frame {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(95,127,106,0.25);
+}
+
+.album-frame img {
+  width: 100%;
+  height: auto;
+  max-height: 75vh;          /* không vượt màn hình */
+  object-fit: contain;       /* ⭐ KHÔNG BỊ CẮT */
+  display: block;
+  cursor: zoom-in;
+  transition: opacity 0.4s ease;
+}
+
+.album-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+
+  background: linear-gradient(
+    45deg,
+    var(--green-main),
+    var(--pink-main)
+  );
+
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.album-nav.prev {
+  left: -18px;
+}
+
+.album-nav.next {
+  right: -18px;
+}
+
 
 .music-btn {
   position: fixed;
@@ -1109,8 +1168,18 @@ footer {
     padding: 60px 16px;
   }
 
-  .gallery img {
+/*  .gallery img {
     height: 220px;
+  } */
+
+  .album-slider {
+    max-width: 90%;
+  }
+
+  .album-nav {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
   }
 
   .direction-btn {

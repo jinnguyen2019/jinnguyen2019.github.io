@@ -120,24 +120,85 @@ const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const closeBtn = document.querySelector(".lightbox-close");
 
-document.querySelectorAll(".gallery img").forEach(img => {
-  img.addEventListener("click", () => {
-    lightboxImg.src = img.src;
-    lightbox.classList.remove("hidden");
-    lightbox.style.pointerEvents = "auto";
-  });
+//document.querySelectorAll(".gallery img").forEach(img => {
+//  img.addEventListener("click", () => {
+//    lightboxImg.src = img.src;
+//    lightbox.classList.remove("hidden");
+//    lightbox.style.pointerEvents = "auto";
+//  });
+//});
+
+//closeBtn.addEventListener("click", () => {
+//  lightbox.classList.add("hidden");
+//  lightbox.style.pointerEvents = "none";
+//});
+//
+//lightbox.addEventListener("click", (e) => {
+//  if (e.target === lightbox) {
+//    lightbox.classList.add("hidden");
+//    lightbox.style.pointerEvents = "none";
+//  }
+//});
+
+const albumImages = [
+  "assets/images/cover.jpg",
+  "assets/images/1.jpg",
+  "assets/images/2.jpg",
+  "assets/images/3.jpg",
+  "assets/images/4.jpg",
+  "assets/images/5.jpg",
+  "assets/images/6.jpg"
+];
+
+let albumIndex = 0;
+
+const albumImg = document.getElementById("albumImage");
+const prevBtn = document.querySelector(".album-nav.prev");
+const nextBtn = document.querySelector(".album-nav.next");
+
+function showAlbumImage(index) {
+  albumImg.style.opacity = 0;
+
+  setTimeout(() => {
+    albumImg.src = albumImages[index];
+    albumImg.style.opacity = 1;
+  }, 200);
+}
+
+prevBtn.addEventListener("click", () => {
+  albumIndex = (albumIndex - 1 + albumImages.length) % albumImages.length;
+  showAlbumImage(albumIndex);
 });
 
-closeBtn.addEventListener("click", () => {
-  lightbox.classList.add("hidden");
-  lightbox.style.pointerEvents = "none";
+nextBtn.addEventListener("click", () => {
+  albumIndex = (albumIndex + 1) % albumImages.length;
+  showAlbumImage(albumIndex);
 });
 
-lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox) {
-    lightbox.classList.add("hidden");
-    lightbox.style.pointerEvents = "none";
+let startX = 0;
+
+albumImg.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+});
+
+albumImg.addEventListener("touchend", e => {
+  const endX = e.changedTouches[0].clientX;
+  const diff = startX - endX;
+
+  if (Math.abs(diff) > 50) {
+    if (diff > 0) {
+      albumIndex = (albumIndex + 1) % albumImages.length;
+    } else {
+      albumIndex = (albumIndex - 1 + albumImages.length) % albumImages.length;
+    }
+    showAlbumImage(albumIndex);
   }
+});
+
+albumImg.addEventListener("click", () => {
+  lightboxImg.src = albumImg.src;
+  lightbox.classList.remove("hidden");
+  lightbox.style.pointerEvents = "auto";
 });
 
 //floating-leaf

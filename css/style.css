@@ -227,7 +227,6 @@ body {
   font-weight: 600;
 }
 
-/*
 .cover-card {
   position: absolute;
   right: 6%;
@@ -243,31 +242,6 @@ body {
   text-align: right;
   border-radius: 6px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-}
-*/
-
-.cover-card {
-  position: relative;
-  right: 6%;
-  bottom: 6%;
-  width: 90%;
-  padding: 26px 24px;
-  text-align: center;
-
-  /* nền trong suốt hơn một chút */
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-
-  /* trạng thái ban đầu */
-  opacity: 0;
-  transform: translateX(50%) translateY(20px) scale(0.98);
-
-  /* tránh giật */
-  will-change: opacity, transform;
 }
 
 .cover-badge {
@@ -1212,6 +1186,31 @@ footer {
 
   .cover-text h1 {
     font-size: 32px;
+  }
+
+  /* =========================
+     COVER CARD – FADE IN
+     ========================= */
+  .cover-card {
+    position: relative;
+    bottom: 6%;
+    width: 90%;
+    text-align: center;
+
+    /* nền trong suốt hơn một chút */
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+    /* trạng thái ban đầu */
+    opacity: 0;
+    transform: translateX(50%) translateY(20px) scale(0.98);
+
+    /* tránh giật */
+    will-change: opacity, transform;
   }
 
   /* khi được show */

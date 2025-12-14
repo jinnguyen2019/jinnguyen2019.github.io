@@ -119,7 +119,6 @@ statusRadios.forEach(radio => {
 document.addEventListener("DOMContentLoaded", () => {
 
   const albumImages = [
-    "assets/images/cover.jpg",
     "assets/images/1.jpg",
     "assets/images/2.jpg",
     "assets/images/3.jpg",
@@ -260,34 +259,6 @@ if (mapBtn) {
     }
   });
 }
-
-//lazy load image
-document.addEventListener("DOMContentLoaded", () => {
-  const lazyImages = document.querySelectorAll("img.lazy-img");
-
-  if ("IntersectionObserver" in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.onload = () => img.classList.add("loaded");
-          observer.unobserve(img);
-        }
-      });
-    }, {
-      rootMargin: "100px 0px"
-    });
-
-    lazyImages.forEach(img => imageObserver.observe(img));
-  } else {
-    // Fallback cho trình duyệt rất cũ
-    lazyImages.forEach(img => {
-      img.src = img.dataset.src;
-      img.classList.add("loaded");
-    });
-  }
-});
 
 //Fade up card
 const eventCard = document.querySelector('.event-card');

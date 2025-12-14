@@ -116,39 +116,43 @@ statusRadios.forEach(radio => {
 });
 
 //light box when click album
-const albumImages = [
-  "assets/images/cover.jpg",
-  "assets/images/1.jpg",
-  "assets/images/2.jpg",
-  "assets/images/3.jpg",
-  "assets/images/4.jpg",
-  "assets/images/5.jpg",
-  "assets/images/6.jpg"
-];
+document.addEventListener("DOMContentLoaded", () => {
 
-let albumIndex = 0;
+  const albumImages = [
+    "assets/images/cover.jpg",
+    "assets/images/1.jpg",
+    "assets/images/2.jpg",
+    "assets/images/3.jpg",
+    "assets/images/4.jpg",
+    "assets/images/5.jpg",
+    "assets/images/6.jpg"
+  ];
 
-const albumImg = document.getElementById("albumImage");
-const prevBtn = document.querySelector(".album-nav.prev");
-const nextBtn = document.querySelector(".album-nav.next");
+  let albumIndex = 0;
 
-function showAlbumImage(index) {
-  albumImg.style.opacity = 0;
+  const albumImg = document.getElementById("albumImage");
+  const prevBtn = document.querySelector(".album-nav.prev");
+  const nextBtn = document.querySelector(".album-nav.next");
 
-  setTimeout(() => {
-    albumImg.src = albumImages[index];
-    albumImg.style.opacity = 1;
-  }, 200);
-}
+  function showAlbumImage(index) {
+    albumImg.style.opacity = 0;
 
-prevBtn.addEventListener("click", () => {
-  albumIndex = (albumIndex - 1 + albumImages.length) % albumImages.length;
-  showAlbumImage(albumIndex);
-});
+    setTimeout(() => {
+      albumImg.src = albumImages[index];
+      albumImg.style.opacity = 1;
+    }, 200);
+  }
 
-nextBtn.addEventListener("click", () => {
-  albumIndex = (albumIndex + 1) % albumImages.length;
-  showAlbumImage(albumIndex);
+  prevBtn.addEventListener("click", () => {
+    albumIndex = (albumIndex - 1 + albumImages.length) % albumImages.length;
+    showAlbumImage(albumIndex);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    albumIndex = (albumIndex + 1) % albumImages.length;
+    showAlbumImage(albumIndex);
+  });
+
 });
 
 let startX = 0;

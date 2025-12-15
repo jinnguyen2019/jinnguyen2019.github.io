@@ -760,6 +760,31 @@ body {
   border-color: var(--pink-main);
 }
 
+.rsvp-form textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 100px;
+
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  line-height: 1.6;
+
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rsvp-form textarea:focus {
+  outline: none;
+  border-color: var(--pink-main);
+  box-shadow: 0 0 0 2px rgba(255, 182, 193, 0.25);
+}
+
 .radio-group {
   display: flex;
   flex-direction: column;
@@ -1566,6 +1591,11 @@ footer {
 
   .rsvp-card {
     padding: 28px 18px;
+  }
+
+  .rsvp-form textarea {
+    font-size: 15px;
+    min-height: 90px;
   }
 
   .timeline-vertical {

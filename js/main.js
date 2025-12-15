@@ -81,29 +81,31 @@ document.getElementById("rsvpForm").addEventListener("submit", function (e) {
     'input[name="status"]:checked'
   )?.value;
   const guest = document.getElementById("guest").value;
+  const message = document.getElementById("message")?.value || "";
 
   if (!name || !status) {
     alert("Vui lòng nhập đầy đủ thông tin 💌");
     return;
   }
 
-  fetch("https://script.google.com/macros/s/AKfycbwoP4N2RmLcSLhI1TgbOKShuOKx_SwbDHlAZbDaiMXa-Tel994CorcesK4wSdiXHPpnwA/exec", {
+  const formData = new FormData();
+  formData.append("name", name);
+  formData.append("status", status);
+  formData.append("guest", guest);
+  formData.append("message", message);
+
+  fetch("https://script.google.com/macros/s/AKfycbxaVMh_ZDNpSWT6a_qzpDMTl0rNwE8S4hnL2rst2i94ZJeiRqxREJsp3nwFGC31huBIng/exec", {
     method: "POST",
-    body: JSON.stringify({
-      name,
-      status,
-      guest
-    })
+    body: formData
   })
     .then(() => {
-      alert("Cảm ơn bạn đã xác nhận 💙");
+      alert("Cảm ơn bạn đã gửi lời chúc 💖");
       this.reset();
     })
     .catch(() => {
       alert("Có lỗi xảy ra, vui lòng thử lại sau 🙏");
     });
 });
-
 
 const statusRadios = document.querySelectorAll('input[name="status"]');
 const guestGroup = document.getElementById("guest").closest(".form-group");

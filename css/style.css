@@ -684,32 +684,6 @@ body {
 }
 
 /* RSVP */
-/*
-.rsvp {
-  max-width: 360px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.rsvp input,
-.rsvp select {
-  padding: 12px;
-  border: 1px solid #ccc;
-  background: #fff;
-}
-
-.rsvp button {
-  background: linear-gradient(
-    45deg,
-    var(--green-main),
-    var(--pink-main)
-  );
-  color: #fff;
-}
-*/
-
 .rsvp-section {
   padding: 80px 20px;
   background: linear-gradient(
@@ -1633,6 +1607,105 @@ footer {
       transparent 6px,
       transparent 12px
     );
+  }
+}
+
+/* =========================
+   DESKTOP VERSION
+   ========================= */
+@media (min-width: 1024px) {
+
+  .cover {
+    min-height: 100vh;
+    background-position: center top;
+  }
+
+  .cover-card {
+    right: 8%;
+    bottom: 14%;
+    width: 360px;
+    padding: 32px 28px;
+  }
+
+  .cover-names {
+    font-size: 38px;
+  }
+
+  .couple-section {
+    max-width: 1200px;
+    padding: 100px 40px;
+  }
+
+  .couple-card {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .couple-card.reverse {
+    grid-template-columns: 1fr 420px;
+  }
+
+  .couple-photo {
+    max-width: 420px;
+  }
+
+  .couple-info {
+    text-align: left;
+  }
+
+
+  .event-gradient-section {
+    padding: 100px 40px;
+  }
+
+  .event-card {
+    max-width: 720px;
+    padding: 48px 40px;
+  }
+
+  .timeline-vertical {
+    padding: 40px 32px;
+  }
+
+  .timeline-content {
+    font-size: 18px;
+  }
+
+  .countdown-grid {
+    max-width: 680px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .time-box {
+    aspect-ratio: 1 / 1;
+  }
+
+  .countdown-main {
+    font-size: 64px;
+  }
+
+  .album-slider {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .album-frame {
+    max-width: 560px;
+    aspect-ratio: 3 / 4;
+  }
+
+  .album-nav {
+    width: 46px;
+    height: 46px;
+    font-size: 22px;
+  }
+
+  .rsvp-card {
+    max-width: 520px;
+    padding: 40px 36px;
   }
 }
 

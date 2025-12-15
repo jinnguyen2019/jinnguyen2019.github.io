@@ -77,11 +77,9 @@ document.getElementById("rsvpForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
   const name = document.getElementById("name").value.trim();
-
   const status = document.querySelector(
     'input[name="status"]:checked'
   )?.value;
-
   const guest = document.getElementById("guest").value;
 
   if (!name || !status) {
@@ -89,20 +87,14 @@ document.getElementById("rsvpForm").addEventListener("submit", function (e) {
     return;
   }
 
-  fetch(
-    "https://script.google.com/macros/s/AKfycbybOnFXFfI3KFgPdZRNExlUgxy8hq4MIqWVAlc-1Bk-KwfDRPq0EA9SZamHJusfd4Kd_Q/exec",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name,
-        status: status,
-        guest: guest,
-      }),
-    }
-  )
+  fetch("https://script.google.com/macros/s/AKfycbwoP4N2RmLcSLhI1TgbOKShuOKx_SwbDHlAZbDaiMXa-Tel994CorcesK4wSdiXHPpnwA/exec", {
+    method: "POST",
+    body: JSON.stringify({
+      name,
+      status,
+      guest
+    })
+  })
     .then(() => {
       alert("Cảm ơn bạn đã xác nhận 💙");
       this.reset();
@@ -111,6 +103,7 @@ document.getElementById("rsvpForm").addEventListener("submit", function (e) {
       alert("Có lỗi xảy ra, vui lòng thử lại sau 🙏");
     });
 });
+
 
 const statusRadios = document.querySelectorAll('input[name="status"]');
 const guestGroup = document.getElementById("guest").closest(".form-group");
@@ -143,7 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
     img.src = src;
   });
 
-
   let albumIndex = 0;
 
   const albumImg = document.getElementById("albumImage");
@@ -172,26 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
     showAlbumImage(albumIndex);
   });
 
-});
-
-let startX = 0;
-
-albumImg.addEventListener("touchstart", e => {
-  startX = e.touches[0].clientX;
-});
-
-albumImg.addEventListener("touchend", e => {
-  const endX = e.changedTouches[0].clientX;
-  const diff = startX - endX;
-
-  if (Math.abs(diff) > 50) {
-    if (diff > 0) {
-      albumIndex = (albumIndex + 1) % albumImages.length;
-    } else {
-      albumIndex = (albumIndex - 1 + albumImages.length) % albumImages.length;
-    }
-    showAlbumImage(albumIndex);
-  }
 });
 
 const lightbox = document.getElementById("lightbox");

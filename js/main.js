@@ -153,47 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const closeBtn = document.querySelector(".lightbox-close");
-
-//document.querySelectorAll(".gallery img").forEach(img => {
-//  img.addEventListener("click", () => {
-//    lightboxImg.src = img.src;
-//    lightbox.classList.remove("hidden");
-//    lightbox.style.pointerEvents = "auto";
-//  });
-//});
-
-albumImg.addEventListener("click", () => {
-  lightboxImg.src = albumImg.src;
-
-  lightbox.classList.remove("hidden");
-
-  // force reflow để animation + pointer-events hoạt động
-  void lightbox.offsetWidth;
-
-  lightbox.classList.add("show");
-  lightbox.style.pointerEvents = "auto";
-});
-
-function closeLightbox() {
-  lightbox.classList.remove("show");
-
-  setTimeout(() => {
-    lightbox.classList.add("hidden");
-    lightbox.style.pointerEvents = "none";
-  }, 300);
-}
-
-closeBtn.addEventListener("click", closeLightbox);
-
-lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox) {
-    closeLightbox();
-  }
-});
-
 //floating-leaf
 let lastScroll = 0;
 const leaves = document.querySelector(".floating-leaves");

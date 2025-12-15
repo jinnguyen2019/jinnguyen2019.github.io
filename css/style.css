@@ -924,7 +924,7 @@ body {
 .album-frame {
   position: relative;
   width: 100%;
-  max-width: 5000px;
+  max-width: 500px;
   aspect-ratio: 9 / 16;
   overflow: hidden;
   border-radius: 14px;

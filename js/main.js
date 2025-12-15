@@ -90,7 +90,7 @@ document.getElementById("rsvpForm").addEventListener("submit", function (e) {
   }
 
   fetch(
-    "https://script.google.com/macros/s/AKfycbyN6BQoqbOI54DW71S0HIJLRGUD2Yw3t3qmiQgKkbbd1oybJ7RTlrUXasY-hMa8oBec3g/exec",
+    "https://script.google.com/macros/s/AKfycbybOnFXFfI3KFgPdZRNExlUgxy8hq4MIqWVAlc-1Bk-KwfDRPq0EA9SZamHJusfd4Kd_Q/exec",
     {
       method: "POST",
       headers: {

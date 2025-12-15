@@ -318,7 +318,14 @@
 
             <h3 class="rsvp-title">Xác nhận tham dự</h3>
 
-            <form class="rsvp-form" id="rsvpForm">
+            <form
+                    class="rsvp-form"
+                    action="https://script.google.com/macros/s/AKfycbxaVMh_ZDNpSWT6a_qzpDMTl0rNwE8S4hnL2rst2i94ZJeiRqxREJsp3nwFGC31huBIng/exec"
+                    method="POST"
+                    target="hidden_iframe"
+                    onsubmit="handleRSVPSuccess()"
+            >
+                <iframe name="hidden_iframe" style="display:none;"></iframe>
 
                 <!-- Họ và tên -->
                 <div class="form-group">
@@ -326,6 +333,7 @@
                     <input
                             type="text"
                             id="name"
+                            name="name"
                             placeholder="Nhập tên của bạn"
                             required
                     />
@@ -351,7 +359,7 @@
                 <!-- Số lượng -->
                 <div class="form-group">
                     <label for="guest">Số lượng người tham dự</label>
-                    <select id="guest">
+                    <select id="guest" name="guest">
                         <option value="1">1 người</option>
                         <option value="2">2 người</option>
                         <option value="3">3 người</option>
@@ -362,9 +370,10 @@
 
                 <!-- Lời chúc / Lưu bút -->
                 <div class="form-group">
-                    <label for="message">Lưu bút & lời chúc mừng dành cho cô dâu – chú rể</label>
+                    <label for="message">Lưu bút & lời chúc mừng dành cho cô dâu chú rể</label>
                     <textarea
                             id="message"
+                            name="message"
                             rows="10"
                             placeholder="Gửi vài dòng chúc mừng hoặc lưu bút cho cô dâu & chú rể nhé 💌"
                     ></textarea>
@@ -424,6 +433,14 @@
 
 <script src="js/countdown.js"></script>
 <script src="js/main.js"></script>
+<script>
+    function handleRSVPSuccess() {
+      setTimeout(() => {
+        alert("Cảm ơn bạn đã gửi xác nhận 💖");
+        document.querySelector(".rsvp-form").reset();
+      }, 500);
+    }
+</script>
 </body>
 
 </html>

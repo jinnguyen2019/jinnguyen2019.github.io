@@ -58,54 +58,39 @@ toggleBtn.addEventListener("click", () => {
 });
 
 //rsvp
-//document.getElementById("rsvpForm").addEventListener("submit", function(e) {
+//document.getElementById("rsvpForm").addEventListener("submit", function (e) {
 //  e.preventDefault();
 //
-//  fetch("https://script.google.com/macros/s/AKfycbyN6BQoqbOI54DW71S0HIJLRGUD2Yw3t3qmiQgKkbbd1oybJ7RTlrUXasY-hMa8oBec3g/exec", {
+//  const name = document.getElementById("name").value.trim();
+//  const status = document.querySelector(
+//    'input[name="status"]:checked'
+//  )?.value;
+//  const guest = document.getElementById("guest").value;
+//  const message = document.getElementById("message")?.value || "";
+//
+//  if (!name || !status) {
+//    alert("Vui lòng nhập đầy đủ thông tin 💌");
+//    return;
+//  }
+//
+//  const formData = new FormData();
+//  formData.append("name", name);
+//  formData.append("status", status);
+//  formData.append("guest", guest);
+//  formData.append("message", message);
+//
+//  fetch("https://script.google.com/macros/s/AKfycbxaVMh_ZDNpSWT6a_qzpDMTl0rNwE8S4hnL2rst2i94ZJeiRqxREJsp3nwFGC31huBIng/exec", {
 //    method: "POST",
-//    body: JSON.stringify({
-//      name: document.getElementById("name").value,
-//      status: document.getElementById("status").value
-//    })
+//    body: formData
 //  })
-//  .then(() => {
-//    alert("Cảm ơn bạn đã xác nhận 💙");
-//    this.reset();
-//  });
+//    .then(() => {
+//      alert("Cảm ơn bạn đã gửi lời chúc 💖");
+//      this.reset();
+//    })
+//    .catch(() => {
+//      alert("Có lỗi xảy ra, vui lòng thử lại sau 🙏");
+//    });
 //});
-document.getElementById("rsvpForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const status = document.querySelector(
-    'input[name="status"]:checked'
-  )?.value;
-  const guest = document.getElementById("guest").value;
-  const message = document.getElementById("message")?.value || "";
-
-  if (!name || !status) {
-    alert("Vui lòng nhập đầy đủ thông tin 💌");
-    return;
-  }
-
-  const formData = new FormData();
-  formData.append("name", name);
-  formData.append("status", status);
-  formData.append("guest", guest);
-  formData.append("message", message);
-
-  fetch("https://script.google.com/macros/s/AKfycbxaVMh_ZDNpSWT6a_qzpDMTl0rNwE8S4hnL2rst2i94ZJeiRqxREJsp3nwFGC31huBIng/exec", {
-    method: "POST",
-    body: formData
-  })
-    .then(() => {
-      alert("Cảm ơn bạn đã gửi lời chúc 💖");
-      this.reset();
-    })
-    .catch(() => {
-      alert("Có lỗi xảy ra, vui lòng thử lại sau 🙏");
-    });
-});
 
 const statusRadios = document.querySelectorAll('input[name="status"]');
 const guestGroup = document.getElementById("guest").closest(".form-group");

@@ -1632,31 +1632,6 @@ footer {
     font-size: 38px;
   }
 
-  .couple-section {
-    max-width: 1200px;
-    padding: 100px 40px;
-  }
-
-  .couple-card {
-    display: grid;
-    grid-template-columns: 420px 1fr;
-    gap: 60px;
-    align-items: center;
-  }
-
-  .couple-card.reverse {
-    grid-template-columns: 1fr 420px;
-  }
-
-  .couple-photo {
-    max-width: 420px;
-  }
-
-  .couple-info {
-    text-align: left;
-  }
-
-
   .event-gradient-section {
     padding: 100px 40px;
   }

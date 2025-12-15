@@ -1163,8 +1163,8 @@ footer {
 }
 
 .timeline-icon {
-  width: 50px;
-  height: 50px;
+  width: 24px;
+  height: 24px;
   color: #7a2d2d; /* nâu đỏ trang trọng */
 }
 
@@ -1189,8 +1189,8 @@ footer {
 }
 
 .timeline-heart {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   background: linear-gradient(
     45deg,
     var(--green-main),
@@ -1204,8 +1204,8 @@ footer {
 .timeline-heart::before,
 .timeline-heart::after {
   content: "";
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   background: var(--pink-main);
   border-radius: 50%;
   position: absolute;
@@ -1237,8 +1237,8 @@ footer {
   position: absolute;
   top: 50%;
   left: -10px;
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   border-radius: 0 100% 100% 100%;
   background: linear-gradient(
     45deg,
@@ -1400,9 +1400,12 @@ footer {
 }
 
 @keyframes heartPulse {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(1.18); }
-  100% { transform: scale(1); }
+  0%, 100% {
+    transform: rotate(45deg) scale(1);
+  }
+  50% {
+    transform: rotate(45deg) scale(1.12);
+  }
 }
 
 @media (max-width: 480px) {
@@ -1604,20 +1607,6 @@ footer {
 
   .timeline-vertical {
     padding: 24px 12px;
-  }
-
-  .timeline-icon {
-    width: 44px;
-    height: 44px;
-  }
-
-  .timeline-center {
-    width: 38px;
-    height: 38px;
-  }
-
-  .timeline-heart {
-    font-size: 22px;
   }
 }
 

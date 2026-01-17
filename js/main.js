@@ -121,7 +121,14 @@ document.addEventListener("DOMContentLoaded", () => {
     "assets/images/11.jpg",
     "assets/images/12.jpg",
     "assets/images/13.jpg",
-    "assets/images/14.jpg"
+    "assets/images/14.jpg",
+    "assets/images/15.jpg",
+    "assets/images/16.jpg",
+    "assets/images/17.jpg",
+    "assets/images/18.jpg",
+    "assets/images/19.jpg",
+    "assets/images/20.jpg",
+    "assets/images/21.jpg"
   ];
 
   // ⭐ preload ảnh

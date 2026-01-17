@@ -1013,15 +1013,15 @@ body {
 }
 
 :root {
-  --pink1-main: #f8d7da;
-  --pink1-dark: #880e4f;
-  --pink1-soft: #9c1b4d;
+  --pink1-main: #8B3A62;
+  --pink1-dark: #880E4F;
+  --pink1-soft: #9C1B4D;
 
-  --pink-main: #f48fb1;
-  --pink-soft: #f6dde4;
+  --pink-main: #F48FB1;
+  --pink-soft: #f8d7da;
 
   --cream: #faf9f7;
-  --dark: #c2185b;
+  --dark: #f2a7b5 + #f6c1cc;
 }
 
 .highlight {

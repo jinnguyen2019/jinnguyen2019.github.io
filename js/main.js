@@ -189,21 +189,21 @@ if (mapBtn) {
     e.preventDefault();
 
     const destination =
-      "Trung+tâm+Hội+nghị+%26+Tiệc+cưới+Gala";
+      "Khach+san+Cong+Doan,13.0966895,109.3208897";
 
     const ua = navigator.userAgent || navigator.vendor || window.opera;
 
     if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-      // iOS
+      // iOS → Apple Maps
       window.location.href =
         "https://maps.apple.com/?q=" + destination;
     } else if (/android/i.test(ua)) {
-      // Android
+      // Android → Google Maps chỉ đường
       window.location.href =
         "https://www.google.com/maps/dir/?api=1&destination=" +
         destination;
     } else {
-      // Desktop
+      // Desktop → mở trang địa điểm
       window.open(
         "https://www.google.com/maps/place/" + destination,
         "_blank"

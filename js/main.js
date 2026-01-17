@@ -188,24 +188,23 @@ if (mapBtn) {
   mapBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
-    const destination =
-      "Khach+san+Cong+Doan,13.0966895,109.3208897";
+//    const destination =
+//      "Khach+san+Cong+Doan,13.0966895,109.3208897";
 
     const ua = navigator.userAgent || navigator.vendor || window.opera;
 
     if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
       // iOS → Apple Maps
       window.location.href =
-        "https://maps.apple.com/?q=" + destination;
+        "https://maps.app.goo.gl/hwceZnANeQ8d5CT39";
     } else if (/android/i.test(ua)) {
       // Android → Google Maps chỉ đường
       window.location.href =
-        "https://www.google.com/maps/dir/?api=1&destination=" +
-        destination;
+        "https://maps.app.goo.gl/hwceZnANeQ8d5CT39";
     } else {
       // Desktop → mở trang địa điểm
       window.open(
-        "https://www.google.com/maps/place/" + destination,
+        "https://maps.app.goo.gl/hwceZnANeQ8d5CT39",
         "_blank"
       );
     }
